@@ -1,5 +1,9 @@
-import Button from '@mui/material/Button';
+import { Header } from './ecommerce/components/Header';
 
 export const App = () => {
-  return <Button variant="contained">Hello world</Button>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
