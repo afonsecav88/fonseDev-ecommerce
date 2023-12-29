@@ -24,7 +24,7 @@ export const productSlice = createSlice({
   name: 'Product',
   initialState,
   reducers: {
-    setLoadingUsers: (state) => {
+    setLoadingProducts: (state) => {
       state.isLoading = true;
     },
     setAllProducts: (state, action: PayloadAction<Product[]>) => {
@@ -34,4 +34,4 @@ export const productSlice = createSlice({
   },
 });
 // Action creators are generated for each case reducer function
-export const { setLoadingUsers, setAllProducts } = productSlice.actions;
+export const { setLoadingProducts, setAllProducts } = productSlice.actions;
