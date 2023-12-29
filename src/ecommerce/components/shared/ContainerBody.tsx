@@ -6,7 +6,13 @@ export const ContainerBody = () => {
   return (
     <>
       <CssBaseline />
-      <Container>
+      <Container
+        sx={{
+          display: 'flex',
+          gap: 5,
+          flexWrap: 'wrap',
+        }}
+      >
         <ListCardProduct />
       </Container>
     </>

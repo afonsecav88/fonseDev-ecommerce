@@ -4,30 +4,51 @@ import {
   Typography,
   CardActions,
   Button,
+  CardMedia,
 } from '@mui/material';
 
 export const CardProduct = ({ product }) => {
+  const { title, description, image, price, category, rating } = product;
+  const { rate, count } = rating;
+
   return (
-    <Card sx={{ minWidth: 100, border: '1px solid #1976D2' }}>
+    <Card sx={{ maxWidth: 345, padding: 3, marginBottom: 2 }}>
+      <Typography variant="h6">
+        <strong> {title}</strong>
+      </Typography>
+      <br />
+      <CardMedia
+        sx={{ height: 340, width: 300, padding: 4 }}
+        image={image}
+        title={title}
+        component="img"
+      />
       <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          Word of the Day
+        <Typography variant="h6" component="div" sx={{ marginY: 2 }}>
+          <strong> Category: </strong> {category}
         </Typography>
-        <Typography variant="h5" component="div">
-          Hola
-        </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          adjective
+        <Typography variant="body1" sx={{ marginY: 2 }}>
+          {description}
         </Typography>
         <Typography variant="body2">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
+          <strong> Price: </strong> {price}
+        </Typography>
+        <Typography
+          variant="body2"
+          color=""
+          sx={{
+            display: 'inline-flex',
+            alignContent: 'space-between',
+            gap: 1,
+            marginY: 2,
+          }}
+        >
+          <strong>Rate:</strong> {rate} <strong> Count: </strong> {count}
         </Typography>
       </CardContent>
       <CardActions>
         <Button variant="contained" color="success" size="small">
-          Learn More
+          Details
         </Button>
       </CardActions>
     </Card>
