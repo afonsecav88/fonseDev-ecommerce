@@ -1,18 +1,21 @@
 import { Input } from '@mui/material';
 
-export const SearchProduct = () => {
+import { useSearchProductByTitle } from '../../hooks/useSearchProductByTitle';
+
+export const SearchProduct = ({ productSearch }) => {
+  const { HandleOnchange } = useSearchProductByTitle();
+
   return (
     <>
       <Input
         id="search"
         name="search"
+        onChange={(e) => HandleOnchange(e)}
         placeholder="Busque un producto"
         autoComplete="off"
         sx={{
           background: '#CECECE',
           paddingX: 1,
-          //  color: '#BDA187',
-          //  border: '1px solid #BDA187',
         }}
       />
     </>

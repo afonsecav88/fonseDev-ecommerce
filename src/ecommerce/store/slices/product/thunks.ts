@@ -12,8 +12,8 @@ export const getAllProducts = () => {
       .then(({ data }) => {
         dispatch(setAllProducts(data));
       })
-      .then((err) => {
-        console.log(err);
+      .catch((error: Error) => {
+        throw new Error(`Ha ocurrido un error  ${error.message} `);
       });
   };
 };

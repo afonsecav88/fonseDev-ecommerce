@@ -31,7 +31,12 @@ export const productSlice = createSlice({
       state.isLoading = false;
       state.product = action.payload;
     },
+    searchProduct: (state, action: PayloadAction<string>) => {
+      const termSearch = action.payload.trim().toLowerCase();
+      state.product.filter((product) => product.title.includes(termSearch));
+    },
   },
 });
 // Action creators are generated for each case reducer function
-export const { setLoadingProducts, setAllProducts } = productSlice.actions;
+export const { setLoadingProducts, setAllProducts, searchProduct } =
+  productSlice.actions;
