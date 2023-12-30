@@ -32,8 +32,7 @@ export const productSlice = createSlice({
       state.product = action.payload;
     },
     searchProduct: (state, action: PayloadAction<string>) => {
-      const termSearch = action.payload.trim().toLowerCase();
-      state.product.filter((product) => product.title.includes(termSearch));
+      state.product.filter((product) => product.title.includes(action.payload));
     },
   },
 });

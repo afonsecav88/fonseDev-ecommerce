@@ -10,7 +10,9 @@ export const useSearchProductByTitle = () => {
     e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
   ): void => {
     const { value } = e.target;
-    console.log(dispatch(searchProduct(value)));
+    const termSearch = value.trim().toLowerCase();
+    dispatch(searchProduct(termSearch));
+    console.log(termSearch);
   };
   return {
     product,

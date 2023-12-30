@@ -1,8 +1,13 @@
 import { Input } from '@mui/material';
 
 import { useSearchProductByTitle } from '../../hooks/useSearchProductByTitle';
+import { Product } from '../../interfaces/interfaces';
 
-export const SearchProduct = ({ productSearch }) => {
+type PropsSearch = {
+  product: Product[];
+};
+
+export const SearchProduct = ({ product }: PropsSearch) => {
   const { HandleOnchange } = useSearchProductByTitle();
 
   return (
