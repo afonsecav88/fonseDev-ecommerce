@@ -1,4 +1,5 @@
 import { AppBar, Toolbar, Typography } from '@mui/material';
+import { SearchProduct } from '../products/SearchProduct';
 
 export const Header = () => {
   return (
@@ -13,7 +14,8 @@ export const Header = () => {
     >
       <Toolbar
         sx={{
-          gap: 5,
+          display: 'flex',
+          gap: 4,
           marginRight: 10,
         }}
       >
@@ -60,6 +62,8 @@ export const Header = () => {
         >
           Hola
         </Typography>
+
+        <SearchProduct />
       </Toolbar>
     </AppBar>
   );
