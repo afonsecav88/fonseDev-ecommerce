@@ -18,7 +18,7 @@ export const CardProduct = ({ product }) => {
       </Typography>
       <br />
       <CardMedia
-        sx={{ height: 340, width: 300, padding: 4 }}
+        sx={{ height: '100%vh', width: '100%', padding: 4 }}
         image={image}
         title={title}
         component="img"
