@@ -1,6 +1,7 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
-import { ListCardProduct } from '../products/ListCardProduct';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { routes } from '../../routes';
 
 export const ContainerBody = () => {
   return (
@@ -13,7 +14,12 @@ export const ContainerBody = () => {
           flexWrap: 'wrap',
         }}
       >
-        <ListCardProduct />
+        <Routes>
+          {routes.map(({ to, path, Component }) => (
+            <Route key={to} path={path} element={<Component />} />
+          ))}
+          <Route path="/*" element={<Navigate to={routes[0].path} replace />} />
+        </Routes>
       </Container>
     </>
   );

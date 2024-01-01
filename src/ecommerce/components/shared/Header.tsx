@@ -1,5 +1,7 @@
 import { AppBar, Toolbar, Typography } from '@mui/material';
 import { SearchProduct } from '../products/SearchProduct';
+import { NavLink } from 'react-router-dom';
+import { routes } from '../../routes';
 
 export const Header = () => {
   return (
@@ -19,14 +21,37 @@ export const Header = () => {
           marginRight: 10,
         }}
       >
-        <Typography
+        {routes.map(({ to, name }) => (
+          <Typography
+            key={to}
+            variant="h5"
+            sx={{
+              display: 'flex',
+              underline: 'none',
+              ':hover': { color: '#363636' },
+              padding: 3,
+            }}
+          >
+            <NavLink
+              to={to}
+              className={({ isActive }) => (isActive ? 'nav-active' : '')}
+            >
+              {name}
+            </NavLink>
+          </Typography>
+        ))}
+
+        {/* <Router>
+          <Button component={} to="/">
+            With prop forwarding
+          </Button>
+          <br />
+          <Button component={}>With inlining</Button>
+        </Router> */}
+
+        {/* <Typography
           variant="h5"
-          sx={{
-            display: 'flex',
-            flexGrow: 1,
-            ':hover': { color: '#363636' },
-            padding: 3,
-          }}
+          
         >
           Ecommerce
         </Typography>
@@ -61,7 +86,7 @@ export const Header = () => {
           variant="h6"
         >
           Hola
-        </Typography>
+        </Typography> */}
 
         <SearchProduct />
       </Toolbar>

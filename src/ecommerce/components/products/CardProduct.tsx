@@ -31,7 +31,7 @@ export const CardProduct = ({ product }) => {
           {description}
         </Typography>
         <Typography variant="body2">
-          <strong> Price: </strong> {price}
+          <strong> Price: </strong> {`$ ${price}`}
         </Typography>
         <Typography
           variant="body2"

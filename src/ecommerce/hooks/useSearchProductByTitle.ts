@@ -12,7 +12,6 @@ export const useSearchProductByTitle = () => {
     const { value } = e.target;
     const termSearch = value.trim().toLowerCase();
     dispatch(searchProduct(termSearch));
-    console.log(termSearch);
   };
   return {
     product,
