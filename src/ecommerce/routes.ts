@@ -1,6 +1,8 @@
 import { ElectronicProduct } from './components/products/ElectronicProduct';
 import { JeweleryProduct } from './components/products/JeweleryProduct';
 import { ListCardProduct } from './components/products/ListCardProduct';
+import { MenClothesProduct } from './components/products/MenClothesProduct';
+import { WomenClothesProduct } from './components/products/WomenClothesProduct';
 
 interface Route {
   to: string;
@@ -14,7 +16,7 @@ export const routes: Route[] = [
     to: 'home',
     path: '/home',
     Component: ListCardProduct,
-    name: 'Ecommerce',
+    name: 'All products',
   },
   {
     to: 'electronics',
@@ -28,16 +30,16 @@ export const routes: Route[] = [
     Component: JeweleryProduct,
     name: 'jewelery',
   },
-  // {
-  //   to: '/men-clothing',
-  //   path: 'men-clothing',
-  //   Component: ContainerBody,
-  //   name: 'men-clothing',
-  // },
-  // {
-  //   to: '/women-clothing',
-  //   path: '/women-clothing',
-  //   Component: ContainerBody,
-  //   name: 'women-clothing',
-  // },
+  {
+    to: '/men-clothing',
+    path: 'men-clothing',
+    Component: MenClothesProduct,
+    name: `men's clothing`,
+  },
+  {
+    to: '/women-clothing',
+    path: '/women-clothing',
+    Component: WomenClothesProduct,
+    name: `women's clothing`,
+  },
 ];

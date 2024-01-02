@@ -1,12 +1,6 @@
 import { Input } from '@mui/material';
 
 import { useSearchProductByTitle } from '../../hooks/useSearchProductByTitle';
-// import { Product } from '../../interfaces/interfaces';
-
-// type PropsSearch = {
-//   product: Product[];
-// };
-
 export const SearchProduct = () => {
   const { HandleOnchange } = useSearchProductByTitle();
 
@@ -21,6 +15,7 @@ export const SearchProduct = () => {
         sx={{
           background: '#CECECE',
           paddingX: 1,
+          mt: 0.5,
         }}
       />
     </>

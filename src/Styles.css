@@ -4,24 +4,33 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 .nav-active {
-   color: rgb(62, 197, 197);
-   transition: all .3s ease-out;
-   display: flex;
- }
+  color: rgb(62, 197, 197);
+  transition: all .3s ease-out;
+  display: flex;
+  gap: 3;
+}
 
- li {
-   list-style: none; 
- }
- 
- ul li a {
+ a {
    text-decoration: none;
    margin-bottom: 0.5rem;
    padding: 0.5rem;
    display: flex;
+   gap:4;
    align-self: self-start;
-   background-color: antiquewhite;  
+   /* background-color: antiquewhite;  */
  }
+
+a:hover {
+  background-color: rgb(226, 194, 145),
+}
+
+a:link {
+  text-decoration: none;
+  display: flex;
+  gap: 4;
+  /* flex-wrap: wrap; */
+  align-self: self-start;
+} */
  
- a:hover {
-   background-color: rgb(226, 194, 145)
- }
+ 
+

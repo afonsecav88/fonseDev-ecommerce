@@ -1,4 +1,3 @@
-import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { routes } from '../../routes';
@@ -6,7 +5,6 @@ import { routes } from '../../routes';
 export const ContainerBody = () => {
   return (
     <>
-      <CssBaseline />
       <Container
         sx={{
           display: 'flex',
