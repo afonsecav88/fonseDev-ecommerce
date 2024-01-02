@@ -15,7 +15,6 @@ export const SearchProduct = () => {
         sx={{
           background: '#CECECE',
           paddingX: 1,
-          mt: 0.5,
         }}
       />
     </>

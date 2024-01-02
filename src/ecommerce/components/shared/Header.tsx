@@ -1,7 +1,15 @@
-import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  Container,
+  Box,
+} from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import { routes } from '../../routes';
 import { SearchProduct } from '../products/SearchProduct';
+import { Logo } from './Logo';
 
 export const Header = () => {
   return (
@@ -24,7 +32,7 @@ export const Header = () => {
           }}
         >
           <Typography variant="h6" sx={{ ml: 1, flexGrow: 1 }}>
-            LOGO
+            <Logo />
           </Typography>
           {routes.map(({ to, name }) => (
             <Button
@@ -33,7 +41,7 @@ export const Header = () => {
               component={NavLink}
               to={to}
               sx={{
-                mt: 2,
+                mt: 3.5,
                 color: '#fff',
                 '&:hover': {
                   color: 'rgb(226, 194, 145)',

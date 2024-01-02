@@ -10,15 +10,15 @@ import '@fontsource/roboto/700.css';
   gap: 3;
 }
 
- a {
-   text-decoration: none;
-   margin-bottom: 0.5rem;
-   padding: 0.5rem;
-   display: flex;
-   gap:4;
-   align-self: self-start;
-   /* background-color: antiquewhite;  */
- }
+a {
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  gap: 4;
+  align-self: self-start;
+  /* background-color: antiquewhite;  */
+}
 
 a:hover {
   background-color: rgb(226, 194, 145),
@@ -30,7 +30,9 @@ a:link {
   gap: 4;
   /* flex-wrap: wrap; */
   align-self: self-start;
-} */
- 
- 
+}
 
+.logo-image {
+  width: 100px;
+  height: 80px;
+}
