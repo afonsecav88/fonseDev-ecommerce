@@ -16,6 +16,11 @@ export const ContainerBody = () => {
           {routes.map(({ to, path, Component }) => (
             <Route key={to} path={path} element={<Component />} />
           ))}
+          <Route
+            key="search"
+            path="/search"
+            element={<Navigate to={routes[0].path} replace />}
+          />
           <Route path="/*" element={<Navigate to={routes[0].path} replace />} />
         </Routes>
       </Container>

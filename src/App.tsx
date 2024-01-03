@@ -3,7 +3,7 @@ import { ContainerBody } from './ecommerce/components/shared/ContainerBody';
 import { Header } from './ecommerce/components/shared/Header';
 import { CssBaseline } from '@mui/material';
 
-export const App = () => {
+export const EcommerceApp = () => {
   return (
     <BrowserRouter>
       <>

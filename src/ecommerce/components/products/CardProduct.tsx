@@ -6,9 +6,14 @@ import {
   Button,
   CardMedia,
 } from '@mui/material';
+import { Product } from '../../interfaces/interfaces';
 
-export const CardProduct = ({ product }) => {
-  const { title, description, image, price, category, rating } = product;
+type PropsCardProduct = {
+  productItem: Product;
+};
+
+export const CardProduct = ({ productItem }: PropsCardProduct) => {
+  const { title, description, image, price, category, rating } = productItem;
   const { rate, count } = rating;
 
   return (

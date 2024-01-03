@@ -8,8 +8,8 @@ export const ListCardProduct = () => {
   return (
     <>
       {!isLoading ? (
-        product.map((product) => (
-          <CardProduct key={product.id} product={product} />
+        product.map((productItem) => (
+          <CardProduct key={productItem.id} productItem={productItem} />
         ))
       ) : (
         <NotProductsLoaded />
