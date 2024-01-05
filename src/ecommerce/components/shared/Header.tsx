@@ -1,11 +1,4 @@
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  Container,
-  Box,
-} from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import { routes } from '../../routes';
 import { SearchProduct } from '../products/SearchProduct';

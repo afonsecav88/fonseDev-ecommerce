@@ -3,11 +3,12 @@ import { CardProduct } from './CardProduct';
 import { NotProductsLoaded } from './NotProductsLoaded';
 
 export const ElectronicProduct = () => {
-  const { product, isLoading } = useFilterByCategory('electronics');
+  const { filteredProduct } = useFilterByCategory('electronics');
+
   return (
     <>
-      {!isLoading ? (
-        product.map((productItem) => (
+      {filteredProduct() ? (
+        filteredProduct().map((productItem) => (
           <CardProduct key={productItem.id} productItem={productItem} />
         ))
       ) : (

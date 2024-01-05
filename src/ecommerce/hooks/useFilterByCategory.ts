@@ -1,29 +1,15 @@
+import { Category, Product } from '../interfaces/interfaces';
 import { useSelectorAndDispatch } from './useSelectorAndDispatch';
-import { filterByCategory } from '../store/slices/product/productSlice';
-import { useEffect } from 'react';
 
-export const useFilterByCategory = (category: string) => {
-  const { dispatch, products } = useSelectorAndDispatch();
-  const { product, isLoading } = products;
+export const useFilterByCategory = (category: Category) => {
+  const { products } = useSelectorAndDispatch();
+  const { product } = products;
 
-  useEffect(() => {
-    dispatch(filterByCategory(category));
-  }, []);
+  const filteredProduct = (): Product[] => {
+    return product.filter((itemProduct) => itemProduct.category === category);
+  };
 
   return {
-    product,
-    isLoading,
+    filteredProduct,
   };
-  // switch (product[0].category) {
-  //   case `'electronics'`:
-  //     return dispatch(filterByCategory('electronics'));
-  //   case `'jewelery'`:
-  //     return dispatch(filterByCategory('jewelery'));
-  //   case `men's clothing`:
-  //     return dispatch(filterByCategory(`men's clothing`));
-  //   case `women's clothing`:
-  //     return dispatch(filterByCategory(`women's clothing`));
-  //   default:
-  //     break;
-  // }
 };

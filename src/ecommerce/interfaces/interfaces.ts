@@ -18,3 +18,9 @@ export interface Rating {
   rate: number;
   count: number;
 }
+
+export type Category =
+  | 'electronics'
+  | 'jewelery'
+  | "men's clothing"
+  | "women's clothing";
