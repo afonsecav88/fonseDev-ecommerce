@@ -1,7 +1,6 @@
 import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import { routes } from '../../routes';
-import { SearchProduct } from '../products/SearchProduct';
 import { Logo } from './Logo';
 
 export const Header = () => {
@@ -44,8 +43,6 @@ export const Header = () => {
               {name}
             </Button>
           ))}
-
-          <SearchProduct />
         </Toolbar>
       </Container>
     </AppBar>

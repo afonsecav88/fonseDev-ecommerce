@@ -33,12 +33,12 @@ export const productSlice = createSlice({
     },
     searchProduct: (state, action: PayloadAction<string>) => {
       state.product.filter((product) =>
-        product.title.toLowerCase().trim().includes(action.payload)
+        product.title.toLowerCase().trim().includes(action.payload),
       );
     },
     filterByCategory: (state, action: PayloadAction<string>) => {
       state.product.filter(
-        (product) => product.category == action.payload.trim()
+        (product) => product.category == action.payload.trim(),
       );
     },
   },
