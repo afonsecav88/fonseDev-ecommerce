@@ -32,7 +32,9 @@ export const productSlice = createSlice({
       state.product = action.payload;
     },
     searchProduct: (state, action: PayloadAction<string>) => {
-      state.product.filter((product) => product.title.includes(action.payload));
+      state.product.filter((product) =>
+        product.title.toLowerCase().trim().includes(action.payload)
+      );
     },
     filterByCategory: (state, action: PayloadAction<string>) => {
       state.product.filter(

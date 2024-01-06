@@ -1,9 +1,8 @@
 import { Input } from '@mui/material';
 import { useSearchProductByTitle } from '../../hooks/useSearchProductByTitle';
 export const SearchProduct = () => {
-  const { HandleOnchange, searchValue, searchProducts } =
-    useSearchProductByTitle();
-  console.log(searchProducts);
+  const { HandleOnchange, searchValue } = useSearchProductByTitle();
+
   return (
     <>
       <Input
