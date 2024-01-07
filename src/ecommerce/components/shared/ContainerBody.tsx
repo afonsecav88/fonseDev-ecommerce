@@ -13,8 +13,8 @@ export const ContainerBody = () => {
         }}
       >
         <Routes>
-          {routes.map(({ to, path, Component }) => (
-            <Route key={to} path={path} element={<Component />} />
+          {routes.map(({ to, path, Component, name }) => (
+            <Route key={to} path={path} element={<Component name={name} />} />
           ))}
           <Route
             key="search"

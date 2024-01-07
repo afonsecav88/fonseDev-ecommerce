@@ -7,6 +7,7 @@ import {
   CardMedia,
 } from '@mui/material';
 import { Product } from '../../interfaces/interfaces';
+import { AddToCart } from './AddToCart';
 
 type PropsCardProduct = {
   productItem: Product;
@@ -22,6 +23,9 @@ export const CardProduct = ({ productItem }: PropsCardProduct) => {
         <strong> {title}</strong>
       </Typography>
       <br />
+      <Typography sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+        <AddToCart />
+      </Typography>
       <CardMedia
         sx={{ height: '100%vh', width: '100%', padding: 4 }}
         image={image}

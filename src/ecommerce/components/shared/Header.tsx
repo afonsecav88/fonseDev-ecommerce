@@ -1,7 +1,8 @@
 import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { routes } from '../../routes';
 import { Logo } from './Logo';
+import { ShoppingCart } from '../products/ShoppingCart';
 
 export const Header = () => {
   return (
@@ -24,7 +25,9 @@ export const Header = () => {
           }}
         >
           <Typography variant="h6" sx={{ ml: 1, flexGrow: 1 }}>
-            <Logo />
+            <Link to={'/home'}>
+              <Logo />
+            </Link>
           </Typography>
           {routes.map(({ to, name }) => (
             <Button
@@ -43,6 +46,7 @@ export const Header = () => {
               {name}
             </Button>
           ))}
+          <ShoppingCart />
         </Toolbar>
       </Container>
     </AppBar>

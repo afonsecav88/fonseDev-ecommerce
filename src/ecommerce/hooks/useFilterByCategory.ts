@@ -1,7 +1,7 @@
-import { Category, Product } from '../interfaces/interfaces';
+import { Product } from '../interfaces/interfaces';
 import { useSelectorAndDispatch } from './useSelectorAndDispatch';
 
-export const useFilterByCategory = (category: Category) => {
+export const useFilterByCategory = (category: string) => {
   const { products } = useSelectorAndDispatch();
   const { product } = products;
 

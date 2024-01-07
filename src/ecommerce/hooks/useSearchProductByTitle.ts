@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { useSelectorAndDispatch } from './useSelectorAndDispatch';
 
 export const useSearchProductByTitle = () => {
@@ -14,11 +14,6 @@ export const useSearchProductByTitle = () => {
   const searchProducts = product.filter((product) =>
     product.title.toLowerCase().trim().includes(searchValue),
   );
-  console.log(searchProducts);
-
-  useEffect(() => {
-    searchProducts;
-  }, [searchValue]);
 
   return {
     searchValue,
