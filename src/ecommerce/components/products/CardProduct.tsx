@@ -22,10 +22,10 @@ export const CardProduct = ({ productItem }: PropsCardProduct) => {
       <Typography variant="h6">
         <strong> {title}</strong>
       </Typography>
-      <br />
-      <Typography sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+      <Typography sx={{ display: 'flex', justifyContent: 'flex-end', mt: 3 }}>
         <AddToCart />
       </Typography>
+      <br />
       <CardMedia
         sx={{ height: '100%vh', width: '100%', padding: 4 }}
         image={image}

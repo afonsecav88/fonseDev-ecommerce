@@ -24,7 +24,3 @@ export type Category =
   | 'jewelery'
   | "men's clothing"
   | "women's clothing";
-
-export type PropsCategory = {
-  name: string;
-};

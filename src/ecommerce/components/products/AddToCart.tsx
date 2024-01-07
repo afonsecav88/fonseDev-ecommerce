@@ -5,7 +5,7 @@ export const AddToCart = () => {
     <>
       <Button variant="outlined">
         {' '}
-        <AddIcon color="primary" />
+        <AddIcon titleAccess="Add to Cart" color="primary" />
       </Button>
     </>
   );
