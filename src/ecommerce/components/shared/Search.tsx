@@ -2,13 +2,13 @@ import { Input } from '@mui/material';
 import { useSearchProductByTitle } from '../../hooks/useSearchProductByTitle';
 
 export const Search = () => {
-  const { HandleOnchange, searchValue } = useSearchProductByTitle();
+  const { HandleOnchange, searchTermValue } = useSearchProductByTitle();
 
   return (
     <>
       <Input
         id="search"
-        value={searchValue}
+        value={searchTermValue}
         name="search"
         onChange={HandleOnchange}
         placeholder="Busque un producto"

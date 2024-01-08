@@ -1,10 +1,14 @@
 import Container from '@mui/material/Container';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { routes } from '../../routes';
+import { Search } from './Search';
 
 export const ContainerBody = () => {
   return (
     <>
+      <Container sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
+        <Search />
+      </Container>
       <Container
         sx={{
           display: 'flex',

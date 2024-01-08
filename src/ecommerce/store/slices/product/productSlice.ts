@@ -4,6 +4,8 @@ import { Product, Products } from '../../../interfaces/interfaces';
 
 const initialState: Products = {
   isLoading: false,
+  searchTermValue: '',
+  category: 'electronics',
   product: [
     {
       id: 0,
@@ -31,6 +33,9 @@ export const productSlice = createSlice({
       state.isLoading = false;
       state.product = action.payload;
     },
+    setTermSearch: (state, action: PayloadAction<string>) => {
+      state.searchTermValue = action.payload.toLowerCase().trim();
+    },
     searchProduct: (state, action: PayloadAction<string>) => {
       state.product.filter((product) =>
         product.title.toLowerCase().trim().includes(action.payload),
@@ -47,6 +52,7 @@ export const productSlice = createSlice({
 export const {
   setLoadingProducts,
   setAllProducts,
+  setTermSearch,
   searchProduct,
   filterByCategory,
 } = productSlice.actions;
