@@ -2,6 +2,7 @@ import Container from '@mui/material/Container';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { routes } from '../../routes';
 import { Search } from './Search';
+import { ProductsDetails } from '../products/ProductsDetails';
 
 export const ContainerBody = () => {
   return (
@@ -20,11 +21,8 @@ export const ContainerBody = () => {
           {routes.map(({ to, path, Component }) => (
             <Route key={to} path={path} element={<Component />} />
           ))}
-          <Route
-            key="search"
-            path="/search"
-            element={<Navigate to={routes[0].path} replace />}
-          />
+          {/* <Route key="detail" path="/detail:id" element={<Navigate to={<ProductsDetails/>}  />} */}
+          <Route path="/details/:id" element={<ProductsDetails />} />
           <Route path="/*" element={<Navigate to={routes[0].path} replace />} />
         </Routes>
       </Container>

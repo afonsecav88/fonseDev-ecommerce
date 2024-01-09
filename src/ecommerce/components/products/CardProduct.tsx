@@ -2,20 +2,23 @@ import {
   Card,
   CardContent,
   Typography,
-  CardActions,
-  Button,
   CardMedia,
+  Button,
 } from '@mui/material';
 import { Product } from '../../interfaces/interfaces';
 import { AddToCart } from './AddToCart';
+import { Link } from 'react-router-dom';
 
 type PropsCardProduct = {
   productItem: Product;
 };
 
 export const CardProduct = ({ productItem }: PropsCardProduct) => {
-  const { title, description, image, price, category, rating } = productItem;
+  const { title, description, image, price, category, rating, id } =
+    productItem;
   const { rate, count } = rating;
+
+  if (!productItem) return null;
 
   return (
     <Card sx={{ maxWidth: 345, padding: 3, marginBottom: 2 }}>
@@ -55,11 +58,17 @@ export const CardProduct = ({ productItem }: PropsCardProduct) => {
           <strong>Rate:</strong> {rate} <strong> Count: </strong> {count}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button variant="contained" color="success" size="small">
+
+      <Button
+        variant="outlined"
+        color="success"
+        size="small"
+        sx={{ float: 'right' }}
+      >
+        <Link style={{ fontSize: 'x-small' }} to={`/details/${id}`}>
           Details
-        </Button>
-      </CardActions>
+        </Link>
+      </Button>
     </Card>
   );
 };
