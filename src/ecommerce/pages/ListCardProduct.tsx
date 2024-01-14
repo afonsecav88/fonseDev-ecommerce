@@ -1,7 +1,7 @@
-import { useGetAllProducts } from '../../hooks/useGetAllProducts';
-import { useSearchProductByTitle } from '../../hooks/useSearchProductByTitle';
-import { CardProduct } from './CardProduct';
-import { NotProductsLoaded } from './NotProductsLoaded';
+import { useGetAllProducts } from '../hooks/useGetAllProducts';
+import { useSearchProductByTitle } from '../hooks/useSearchProductByTitle';
+import { CardProduct } from '../components/CardProduct';
+import { NotProductsLoaded } from '../components/NotProductsLoaded';
 
 export const ListCardProduct = () => {
   const { isLoading, product } = useGetAllProducts();

@@ -1,14 +1,14 @@
 import { UnknownAction } from '@reduxjs/toolkit';
 import { Dispatch } from 'react';
 import { setAllProducts, setLoadingProducts } from './productSlice';
-import { productsApi } from '../../../../api/productsApi';
-import { Product } from '../../../interfaces/interfaces';
+import { productsApi } from '../../shared/api/productsApi';
+import { IProductEntity } from './models/IProductEntity';
 
 export const getAllProducts = () => {
   return async (dispatch: Dispatch<UnknownAction>) => {
     dispatch(setLoadingProducts());
     await productsApi
-      .get<Product[]>(`/products`)
+      .get<IProductEntity[]>(`/products`)
       .then(({ data }) => {
         dispatch(setAllProducts(data));
       })

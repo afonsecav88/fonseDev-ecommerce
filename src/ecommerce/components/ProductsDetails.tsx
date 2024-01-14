@@ -7,7 +7,7 @@ import {
   Typography,
 } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useGetProductById } from '../../hooks/useGetProductById';
+import { useGetProductById } from '../hooks/useGetProductById';
 import { AddToCart } from './AddToCart';
 
 export const ProductsDetails = () => {

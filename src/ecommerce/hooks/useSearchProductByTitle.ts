@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useState } from 'react';
 import { useSelectorAndDispatch } from './useSelectorAndDispatch';
-import { setTermSearch } from '../store/slices/product/productSlice';
+import { setTermSearch } from '../store/productSlice';
 
 export const useSearchProductByTitle = () => {
   const [searchValue, setSearchValue] = useState<string>('');

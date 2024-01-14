@@ -1,4 +1,4 @@
-import { RootState } from '../store/store'
+import { RootState } from '../../shared/store/store'
 import { useAppDispatch, useAppSelector } from './useConfigSelectorAndDispatch'
 
 export const useSelectorAndDispatch = () => {
