@@ -1,5 +1,5 @@
 import { Input } from '@mui/material';
-import { useSearchProductByTitle } from '../../hooks/useSearchProductByTitle';
+import { useSearchProductByTitle } from '../../ecommerce/hooks/useSearchProductByTitle';
 
 export const Search = () => {
   const { HandleOnchange, searchTermValue } = useSearchProductByTitle();

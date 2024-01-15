@@ -5,12 +5,12 @@ import {
   CardMedia,
   Button,
 } from '@mui/material';
-import { Product } from '../../interfaces/interfaces';
 import { AddToCart } from './AddToCart';
 import { Link } from 'react-router-dom';
+import { IProductEntity } from '../store/models/IProductEntity';
 
 type PropsCardProduct = {
-  productItem: Product;
+  productItem: IProductEntity;
 };
 
 export const CardProduct = ({ productItem }: PropsCardProduct) => {

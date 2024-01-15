@@ -1,10 +1,11 @@
 import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
 import { Link, NavLink } from 'react-router-dom';
-import { routes } from '../../routes';
+import { routes } from './routes';
 import { Logo } from './Logo';
-import { ShoppingCart } from '../products/ShoppingCart';
+import { ShoppingCart } from '../../ecommerce/components/ShoppingCart';
 
 export const Header = () => {
+
   return (
     <AppBar
       position="sticky"

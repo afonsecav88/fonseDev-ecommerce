@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelectorAndDispatch } from './useSelectorAndDispatch';
-import { getAllProducts } from '../store/slices/product/thunks';
+import { getAllProducts } from '../store/thunks';
 
 export const useGetAllProducts = () => {
   const { dispatch, products } = useSelectorAndDispatch();

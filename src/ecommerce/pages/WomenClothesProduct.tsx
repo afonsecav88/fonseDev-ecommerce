@@ -1,6 +1,6 @@
-import { useFilterByCategory } from '../../hooks/useFilterByCategory';
-import { CardProduct } from './CardProduct';
-import { NotProductsLoaded } from './NotProductsLoaded';
+import { useFilterByCategory } from '../hooks/useFilterByCategory';
+import { CardProduct } from '../components/CardProduct';
+import { NotProductsLoaded } from '../components/NotProductsLoaded';
 
 export const WomenClothesProduct = () => {
   const { filteredProduct } = useFilterByCategory('jewelery');
