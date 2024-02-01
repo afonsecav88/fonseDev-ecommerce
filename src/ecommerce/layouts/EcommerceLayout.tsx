@@ -1,10 +1,13 @@
-import { Container } from "@mui/material";
-import { Outlet } from "react-router-dom";
-import { Search } from "../../shared/components/Search";
+import { Container, CssBaseline } from '@mui/material';
+import { Outlet } from 'react-router-dom';
+import { Header } from '../shared/components/Header';
+import { Search } from '../shared/components/Search';
 
 export const EcommerceLayout = () => {
   return (
     <>
+      <CssBaseline />
+      <Header />
       <Container sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
         <Search />
       </Container>
@@ -15,8 +18,8 @@ export const EcommerceLayout = () => {
           flexWrap: 'wrap',
         }}
       >
-        <Outlet/>
+        <Outlet />
       </Container>
     </>
-  )
-}
+  );
+};

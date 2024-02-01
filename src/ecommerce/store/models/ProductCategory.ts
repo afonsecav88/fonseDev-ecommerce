@@ -1,4 +1,4 @@
-export type TProductCategoryVO =
+export type ProductCategory =
   | 'electronics'
   | 'jewelery'
   | "men's clothing"

@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { IProductsInitialState } from './models/IProductsInitialState';
-import { IProductEntity } from './models/IProductEntity';
+import { ProductsInitialState } from './models/ProductsInitialState';
+import { ProductEntity } from './models/ProductEntity';
 
-const initialState: IProductsInitialState = {
+const initialState: ProductsInitialState = {
   isLoading: false,
   searchTermValue: '',
   category: 'electronics',
@@ -17,7 +17,7 @@ export const productSlice = createSlice({
     setLoadingProducts: (state) => {
       state.isLoading = true;
     },
-    setAllProducts: (state, action: PayloadAction<IProductEntity[]>) => {
+    setAllProducts: (state, action: PayloadAction<ProductEntity[]>) => {
       state.isLoading = false;
       state.product = action.payload;
     },

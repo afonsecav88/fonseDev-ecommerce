@@ -7,10 +7,10 @@ import {
 } from '@mui/material';
 import { AddToCart } from './AddToCart';
 import { Link } from 'react-router-dom';
-import { IProductEntity } from '../store/models/IProductEntity';
+import { ProductEntity } from '../store/models/ProductEntity';
 
 type PropsCardProduct = {
-  productItem: IProductEntity;
+  productItem: ProductEntity;
 };
 
 export const CardProduct = ({ productItem }: PropsCardProduct) => {
@@ -18,7 +18,7 @@ export const CardProduct = ({ productItem }: PropsCardProduct) => {
     productItem;
   const { rate, count } = rating;
 
-  if (!productItem) return null;
+  if (!productItem) return;
 
   return (
     <Card sx={{ maxWidth: 345, padding: 3, marginBottom: 2 }}>
@@ -65,7 +65,7 @@ export const CardProduct = ({ productItem }: PropsCardProduct) => {
         size="small"
         sx={{ float: 'right' }}
       >
-        <Link style={{ fontSize: 'x-small' }} to={`/details/${id}`}>
+        <Link style={{ fontSize: 'x-small' }} to={`details/${id}`}>
           Details
         </Link>
       </Button>

@@ -1,8 +1,8 @@
 import { UnknownAction } from '@reduxjs/toolkit';
 import { Dispatch } from 'react';
 import { setAllProducts, setLoadingProducts } from './productSlice';
-import { productsApi } from '../../shared/api/productsApi';
-import { IProductEntity } from './models/IProductEntity';
+import { IProductEntity } from './models/ProductEntity';
+import { productsApi } from '../shared/api/productsApi';
 
 export const getAllProducts = () => {
   return async (dispatch: Dispatch<UnknownAction>) => {

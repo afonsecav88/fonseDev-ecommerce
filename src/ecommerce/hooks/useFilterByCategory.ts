@@ -1,12 +1,12 @@
-import { TProductCategoryVO } from '../store/models/IProductCategoryVO';
-import { IProductEntity } from '../store/models/IProductEntity';
+import { ProductCategory } from '../store/models/ProductCategory';
+import { ProductEntity } from '../store/models/ProductEntity';
 import { useSelectorAndDispatch } from './useSelectorAndDispatch';
 
-export const useFilterByCategory = (category: TProductCategoryVO) => {
+export const useFilterByCategory = (category: ProductCategory) => {
   const { products } = useSelectorAndDispatch();
   const { product } = products;
 
-  const filteredProduct = (): IProductEntity[] => {
+  const filteredProduct = (): ProductEntity[] => {
     return product.filter((itemProduct) => itemProduct.category === category);
   };
 

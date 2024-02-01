@@ -16,10 +16,9 @@ export const ProductsDetails = () => {
 
   const navigate = useNavigate();
   const onNavigateBack = () => {
-    navigate('-1');
+    navigate(-1);
   };
 
-  console.log(id);
   return (
     <Container
       sx={{ display: 'flex', justifyContent: 'center', maxWidth: 'xs' }}
