@@ -26,7 +26,7 @@ export const Header = () => {
             marginRight: 10,
           }}
         >
-          <Typography variant="h6" sx={{ ml: 1, flexGrow: 1 }}>
+          <Typography variant="h1" sx={{ flexGrow: 1 }}>
             <Link to={'/ecommerce'}>
               <Logo />
             </Link>

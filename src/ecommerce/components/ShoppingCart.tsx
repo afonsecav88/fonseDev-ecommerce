@@ -7,7 +7,11 @@ export const ShoppingCart = () => {
   return (
     <>
       <Badge badgeContent={addCart} color="success">
-        <img src="/cart.svg" alt="logo" className="logo-image" />
+        <img
+          src="/shopping-cart.svg"
+          alt="logo"
+          className="shopping-cart-image"
+        />
       </Badge>
     </>
   );

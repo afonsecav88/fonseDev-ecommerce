@@ -33,6 +33,11 @@ a:link {
 }
 
 .logo-image {
-  width: 90px;
-  height: 70px;
+  width: 150px;
+  height: 100px;
+}
+
+.shopping-cart-image {
+  width: 80px;
+  height: 60px;
 }
