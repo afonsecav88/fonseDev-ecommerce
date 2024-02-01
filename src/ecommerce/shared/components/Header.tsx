@@ -1,7 +1,8 @@
-import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
+import { AppBar, Typography, Button, Container } from '@mui/material';
 import { Link, NavLink } from 'react-router-dom';
 import { Logo } from './Logo';
 import { ShoppingCart } from '../../components/ShoppingCart';
+import { Search } from './Search';
 
 export const Header = () => {
   return (
@@ -15,10 +16,12 @@ export const Header = () => {
       }}
     >
       <Container maxWidth="xl">
-        <Toolbar
+        <Container
           sx={{
             display: 'flex',
-            gap: 4,
+            flexDirection: { xs: 'column', md: 'row' },
+            justifyContent: 'center',
+            gap: { xs: 0, md: 4 },
             flexWrap: 'wrap',
             marginRight: 10,
           }}
@@ -85,7 +88,10 @@ export const Header = () => {
             women's clothing
           </Button>
           <ShoppingCart />
-        </Toolbar>
+        </Container>
+        <Container sx={{ display: 'flex', justifyContent: 'center', my: 2 }}>
+          <Search />
+        </Container>
       </Container>
     </AppBar>
   );
