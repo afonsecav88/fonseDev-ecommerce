@@ -6,14 +6,15 @@ import {
   Button,
 } from '@mui/material';
 import { AddToCart } from './AddToCart';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ProductEntity } from '../store/models/ProductEntity';
-
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 type PropsCardProduct = {
   productItem: ProductEntity;
 };
 
 export const CardProduct = ({ productItem }: PropsCardProduct) => {
+  const navigate = useNavigate();
   const { title, description, image, price, category, rating, id } =
     productItem;
   const { rate, count } = rating;
@@ -60,14 +61,14 @@ export const CardProduct = ({ productItem }: PropsCardProduct) => {
       </CardContent>
 
       <Button
-        variant="outlined"
+        variant="contained"
         color="success"
         size="small"
         sx={{ float: 'right' }}
+        onClick={() => navigate(`details/${id}`)}
+        startIcon={<ArrowForwardIcon />}
       >
-        <Link style={{ fontSize: 'x-small' }} to={`details/${id}`}>
-          Details
-        </Link>
+        Details
       </Button>
     </Card>
   );

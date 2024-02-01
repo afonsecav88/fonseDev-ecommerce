@@ -6,18 +6,16 @@ import {
   Container,
   Typography,
 } from '@mui/material';
-import { useNavigate, useParams } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+
 import { useGetProductById } from '../hooks/useGetProductById';
 import { AddToCart } from './AddToCart';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export const ProductsDetails = () => {
   const { id } = useParams();
   const { productGetById } = useGetProductById(+id!);
-
   const navigate = useNavigate();
-  const onNavigateBack = () => {
-    navigate(-1);
-  };
 
   return (
     <Container
@@ -65,11 +63,12 @@ export const ProductsDetails = () => {
             </Typography>
           </CardContent>
           <Button
-            onClick={onNavigateBack}
+            onClick={() => navigate(-1)}
             variant="contained"
             color="success"
             size="small"
-            sx={{ display: 'flex', float: 'right' }}
+            sx={{ display: 'flex', float: 'right', alignContent: 'center' }}
+            endIcon={<ArrowBackIcon />}
           >
             Back
           </Button>
