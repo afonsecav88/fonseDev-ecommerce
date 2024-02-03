@@ -1,9 +1,8 @@
 import { Input } from '@mui/material';
-import { useContext } from 'react';
-import { SearchContext } from '../../context/SearchContext';
+import { useSearchContext } from '../../hooks/useSearchContext';
 
 export const Search = () => {
-  const { searchTermValue, setSearchTermValue } = useContext(SearchContext);
+  const { searchTermValue, setSearchTermValue } = useSearchContext();
   return (
     <>
       <Input

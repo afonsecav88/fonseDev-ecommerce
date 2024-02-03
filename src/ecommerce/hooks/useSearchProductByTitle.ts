@@ -1,15 +1,13 @@
 import { useSelectorAndDispatch } from './useSelectorAndDispatch';
-
 import { ProductEntity } from '../store/models/ProductEntity';
-import { useContext } from 'react';
-import { SearchContext } from '../context/SearchContext';
+import { useSearchContext } from './useSearchContext';
 
 export const useSearchProductByTitle = () => {
   const { products } = useSelectorAndDispatch();
+  const { searchTermValue } = useSearchContext();
 
   const { product } = products;
 
-  const { searchTermValue } = useContext(SearchContext);
   const searchProducts = () => {
     return product.filter(
       (product: ProductEntity) =>
