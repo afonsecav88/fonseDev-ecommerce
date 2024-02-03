@@ -1,4 +1,5 @@
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import { SearchProvider } from './ecommerce/context/SearchProvider';
 
 export const App = () => {
   const { pathname } = useLocation();
@@ -9,7 +10,9 @@ export const App = () => {
 
   return (
     <main>
-      <Outlet />
+      <SearchProvider>
+        <Outlet />
+      </SearchProvider>
     </main>
   );
 };

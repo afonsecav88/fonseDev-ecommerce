@@ -1,16 +1,16 @@
 import { Input } from '@mui/material';
-import { useSearchProductByTitle } from '../../hooks/useSearchProductByTitle';
+import { useContext } from 'react';
+import { SearchContext } from '../../context/SearchContext';
 
 export const Search = () => {
-  const { HandleOnchange, searchTermValue } = useSearchProductByTitle();
-
+  const { searchTermValue, setSearchTermValue } = useContext(SearchContext);
   return (
     <>
       <Input
         id="search"
         value={searchTermValue}
         name="search"
-        onChange={HandleOnchange}
+        onChange={(e) => setSearchTermValue(e.target.value)}
         placeholder="Busque un producto"
         autoComplete="off"
         sx={{

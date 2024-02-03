@@ -12,6 +12,7 @@ export const ListCardProduct = () => {
     return searchTermValue!.length < 1 ? product : searchProducts();
   };
 
+  console.log(searchProducts(), searchTermValue);
   return (
     <>
       {!isLoading && productListRender().length !== 0 ? (
