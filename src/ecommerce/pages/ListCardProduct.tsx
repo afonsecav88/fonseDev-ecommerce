@@ -5,12 +5,8 @@ import { NotProductsLoaded } from '../components/NotProductsLoaded';
 import { ProductEntity } from '../store/models/ProductEntity';
 
 export const ListCardProduct = () => {
-  const { isLoading, product } = useGetAllProducts();
-  const { searchTermValue, searchProducts } = useSearchProductByTitle();
-
-  const productListRender = () => {
-    return searchTermValue!.length < 1 ? product : searchProducts();
-  };
+  const { isLoading } = useGetAllProducts();
+  const { productListRender } = useSearchProductByTitle();
 
   return (
     <>

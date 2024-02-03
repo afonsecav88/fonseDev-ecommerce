@@ -15,8 +15,12 @@ export const useSearchProductByTitle = () => {
         product.title.toLowerCase().trim().includes(searchTermValue),
     );
   };
+
+  const productListRender = () => {
+    return searchTermValue!.length < 1 ? product : searchProducts();
+  };
+
   return {
-    searchTermValue,
-    searchProducts,
+    productListRender,
   };
 };
