@@ -8,7 +8,7 @@ export const useSearchProductByTitle = () => {
 
   const { product } = products;
 
-  const searchProducts = () => {
+  const searchProducts = (): ProductEntity[] => {
     return product.filter(
       (product: ProductEntity) =>
         searchTermValue &&
@@ -16,11 +16,7 @@ export const useSearchProductByTitle = () => {
     );
   };
 
-  const productListRender = () => {
-    return searchTermValue!.length < 1 ? product : searchProducts();
-  };
-
   return {
-    productListRender,
+    searchProducts,
   };
 };

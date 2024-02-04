@@ -7,7 +7,9 @@ export const useFilterByCategory = (category: ProductCategory) => {
   const { product } = products;
 
   const filteredProduct = (): ProductEntity[] => {
-    return product.filter((itemProduct) => itemProduct.category === category);
+    return product.filter(
+      (itemProduct: ProductEntity) => itemProduct.category === category,
+    );
   };
 
   return {

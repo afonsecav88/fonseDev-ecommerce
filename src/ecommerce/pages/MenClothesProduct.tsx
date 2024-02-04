@@ -1,14 +1,21 @@
 import { useFilterByCategory } from '../hooks/useFilterByCategory';
 import { CardProduct } from '../components/CardProduct';
 import { NotProductsLoaded } from '../components/NotProductsLoaded';
+import { useSearchProductByTitle } from '../hooks/useSearchProductByTitle';
 
 export const MenClothesProduct = () => {
   const { filteredProduct } = useFilterByCategory("men's clothing");
 
+  const { searchProducts } = useSearchProductByTitle();
+
+  const productListRender = () => {
+    return searchProducts().length < 1 ? filteredProduct() : searchProducts();
+  };
+
   return (
     <>
       {filteredProduct() ? (
-        filteredProduct().map((productItem) => (
+        productListRender().map((productItem) => (
           <CardProduct key={productItem.id} productItem={productItem} />
         ))
       ) : (
