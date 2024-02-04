@@ -5,7 +5,6 @@ import { useSearchContext } from './useSearchContext';
 export const useSearchProductByTitle = () => {
   const { products } = useSelectorAndDispatch();
   const { searchTermValue } = useSearchContext();
-
   const { product } = products;
 
   const searchProducts = (): ProductEntity[] => {

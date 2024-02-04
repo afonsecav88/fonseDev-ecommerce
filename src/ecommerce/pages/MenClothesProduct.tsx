@@ -1,10 +1,10 @@
-import { useFilterByCategory } from '../hooks/useFilterByCategory';
+import { useFilterProductByCategory } from '../hooks/useFilterProductByCategory';
 import { CardProduct } from '../components/CardProduct';
 import { NotProductsLoaded } from '../components/NotProductsLoaded';
 import { useSearchProductByTitle } from '../hooks/useSearchProductByTitle';
 
 export const MenClothesProduct = () => {
-  const { filteredProduct } = useFilterByCategory("men's clothing");
+  const { filteredProduct } = useFilterProductByCategory("men's clothing");
 
   const { searchProducts } = useSearchProductByTitle();
 

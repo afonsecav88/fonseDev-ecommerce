@@ -1,12 +1,12 @@
-import { useFilterByCategory } from '../hooks/useFilterByCategory';
+import { useFilterProductByCategory } from '../hooks/useFilterProductByCategory';
 import { CardProduct } from '../components/CardProduct';
 import { NotProductsLoaded } from '../components/NotProductsLoaded';
 import { useSearchProductByTitle } from '../hooks/useSearchProductByTitle';
 
 export const WomenClothesProduct = () => {
-  const { filteredProduct } = useFilterByCategory('jewelery');
-  const { searchProducts } = useSearchProductByTitle();
+  const { filteredProduct } = useFilterProductByCategory('jewelery');
 
+  const { searchProducts } = useSearchProductByTitle();
   const productListRender = () => {
     return searchProducts().length < 1 ? filteredProduct() : searchProducts();
   };

@@ -1,11 +1,11 @@
-import { useFilterByCategory } from '../hooks/useFilterByCategory';
+import { useFilterProductByCategory } from '../hooks/useFilterProductByCategory';
 
 import { CardProduct } from '../components/CardProduct';
 import { NotProductsLoaded } from '../components/NotProductsLoaded';
 import { useSearchProductByTitle } from '../hooks/useSearchProductByTitle';
 
 export const JeweleryProduct = () => {
-  const { filteredProduct } = useFilterByCategory('jewelery');
+  const { filteredProduct } = useFilterProductByCategory('jewelery');
   const { searchProducts } = useSearchProductByTitle();
 
   const productListRender = () => {
