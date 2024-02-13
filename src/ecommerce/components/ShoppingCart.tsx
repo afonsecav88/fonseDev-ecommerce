@@ -1,12 +1,18 @@
 import { Badge } from '@mui/material';
-import { useState } from 'react';
+import { useSelectorAndDispatch } from '../hooks/useSelectorAndDispatch';
+import { useEffect } from 'react';
 
 export const ShoppingCart = () => {
-  const [addCart, setAddCart] = useState<number>(1);
+  const { cartsProducts } = useSelectorAndDispatch();
+  const { cantProdInCart } = cartsProducts;
+
+  useEffect(() => {
+    cantProdInCart;
+  }, []);
 
   return (
     <>
-      <Badge sx={{ top: '10px' }} badgeContent={addCart} color="success">
+      <Badge sx={{ top: '10px' }} badgeContent={cantProdInCart} color="success">
         <img
           src="/shopping-cart.svg"
           alt="logo"

@@ -8,7 +8,7 @@ export const useGetAllProducts = () => {
 
   useEffect(() => {
     dispatch(getAllProducts());
-  }, []);
+  }, [dispatch]);
 
   return {
     isLoading,

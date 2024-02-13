@@ -9,11 +9,12 @@ import { AddToCart } from './AddToCart';
 import { useNavigate } from 'react-router-dom';
 import { ProductEntity } from '../store/models/ProductEntity';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-type PropsCardProduct = {
-  productItem: ProductEntity;
-};
 
-export const CardProduct = ({ productItem }: PropsCardProduct) => {
+interface CardProductProps {
+  productItem: ProductEntity;
+}
+
+export const CardProduct = ({ productItem }: CardProductProps) => {
   const navigate = useNavigate();
   const { title, description, image, price, category, rating, id } =
     productItem;
@@ -27,7 +28,7 @@ export const CardProduct = ({ productItem }: PropsCardProduct) => {
         <strong> {title}</strong>
       </Typography>
       <Typography sx={{ display: 'flex', justifyContent: 'flex-end', mt: 3 }}>
-        <AddToCart />
+        <AddToCart productItem={productItem} />
       </Typography>
       <br />
       <CardMedia

@@ -4,6 +4,7 @@ import { CartProduct } from './models/CartProducts';
 import { CartInitialState } from './models/CartInitialState';
 
 const initialState: CartInitialState = {
+  cantProdInCart: 0,
   cartProducts: [],
 };
 
@@ -11,8 +12,9 @@ export const cartSlice = createSlice({
   name: 'cartSlice',
   initialState,
   reducers: {
-    addProduct: (state, action: PayloadAction<CartProduct[]>) => {
-      state.cartProducts = action.payload;
+    addProduct: (state, action: PayloadAction<CartProduct>) => {
+      state.cantProdInCart += 1;
+      state.cartProducts.push(action.payload);
     },
   },
 });

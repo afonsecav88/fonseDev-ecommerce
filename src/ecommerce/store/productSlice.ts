@@ -19,7 +19,15 @@ export const productSlice = createSlice({
       state.isLoading = false;
       state.product = action.payload;
     },
+    decrementProduct: (state, action: PayloadAction<number>) => {
+      state.product.filter((product) => {
+        if (product.id === action.payload) {
+          product.rating.count -= 1;
+        }
+      });
+    },
   },
 });
 // Action creators are generated for each case reducer function
-export const { setLoadingProducts, setAllProducts } = productSlice.actions;
+export const { setLoadingProducts, setAllProducts, decrementProduct } =
+  productSlice.actions;
