@@ -1,12 +1,4 @@
-import {
-  Avatar,
-  Container,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
-  Typography,
-} from '@mui/material';
+import { Avatar, Container, List, ListItem, Typography } from '@mui/material';
 import { useSelectorAndDispatch } from '../hooks/useSelectorAndDispatch';
 
 export const AddedProductsToCart = () => {
@@ -23,9 +15,14 @@ export const AddedProductsToCart = () => {
         textJustify: 'center',
         flexDirection: 'column',
         margin: '0px',
-        minWidth: '100%',
-        position: 'sticky',
-        top: '185px',
+        minWidth: '5%',
+        width: '250px',
+        position: 'fixed',
+        top: '80px',
+        right: '0px',
+        backgroundColor: '#CECECE',
+        borderRadius: '5px',
+        zIndex: '1500',
       }}
     >
       {cartProducts &&
@@ -36,9 +33,22 @@ export const AddedProductsToCart = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
+                maxHeight: 200,
+                overflow: 'auto',
               }}
             >
-              <Typography variant="subtitle2" gutterBottom fontWeight="bold">
+              <Avatar
+                sx={{ width: '80px', height: '80px' }}
+                alt={product.title}
+                src={product.image}
+                title={product.title}
+              />
+              <Typography
+                sx={{ width: '180px', height: '40px' }}
+                variant="subtitle2"
+                gutterBottom
+                fontWeight="bold"
+              >
                 {product.title}
               </Typography>
               <Typography variant="subtitle2" gutterBottom>
