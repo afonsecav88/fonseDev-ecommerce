@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { CartProduct } from './models/CartProducts';
 import { CartInitialState } from './models/CartInitialState';
-
 const initialState: CartInitialState = {
   cantProdInCart: 0,
   cartProducts: [],
@@ -14,7 +13,22 @@ export const cartSlice = createSlice({
   reducers: {
     addProduct: (state, action: PayloadAction<CartProduct>) => {
       state.cantProdInCart += 1;
-      state.cartProducts.push(action.payload);
+      // state.cartProducts.push(action.payload);
+      if (state.cartProducts.length === 0) {
+        action.payload.count = 1;
+        state.cartProducts.push(action.payload);
+        return;
+      }
+      const product = state.cartProducts.find(
+        (product) => product.id === action.payload.id,
+      );
+      if (product) {
+        product.count += 1;
+      } else {
+        const count = 1,
+          product = { ...action.payload, count };
+        state.cartProducts.push(product);
+      }
     },
   },
 });
