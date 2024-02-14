@@ -13,12 +13,6 @@ export const cartSlice = createSlice({
   reducers: {
     addProduct: (state, action: PayloadAction<CartProduct>) => {
       state.cantProdInCart += 1;
-      // state.cartProducts.push(action.payload);
-      if (state.cartProducts.length === 0) {
-        action.payload.count = 1;
-        state.cartProducts.push(action.payload);
-        return;
-      }
       const product = state.cartProducts.find(
         (product) => product.id === action.payload.id,
       );
