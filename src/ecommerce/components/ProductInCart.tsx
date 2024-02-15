@@ -1,0 +1,64 @@
+import { Avatar, Card, CardContent, Divider, Typography } from '@mui/material';
+import { CartProduct } from '../store/models/CartProducts';
+import { ProductCartDetailsButton } from './ProductCartDetailsButton';
+
+interface ProductInCartProps {
+  cartProducts: CartProduct[];
+}
+
+export const ProductInCart = ({ cartProducts }: ProductInCartProps) => {
+  return (
+    <>
+      {cartProducts.length >= 1 && (
+        <Card
+          sx={{
+            maxWidth: 280,
+            position: 'fixed',
+            top: '80px',
+            right: '1px',
+            zIndex: '1500',
+            backgroundColor: '#E2E2E2',
+          }}
+        >
+          <Typography
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-evenly',
+              gap: 2,
+              padding: 1,
+              backgroundColor: '#51D27F',
+            }}
+            gutterBottom
+            variant="overline"
+            component="div"
+          >
+            <strong>Productos en el carrito</strong>
+          </Typography>
+          {cartProducts.map((product) => (
+            <div key={product.id}>
+              <CardContent>
+                <Typography
+                  sx={{ display: 'inline-flex', gap: 2 }}
+                  gutterBottom
+                  variant="subtitle1"
+                  component="div"
+                >
+                  <Avatar src={product.image} />
+                  {product.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  <strong>Precio: $ </strong> {product.price}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  <strong>Cantidad:</strong> {product.count}
+                </Typography>
+              </CardContent>
+              <Divider />
+            </div>
+          ))}
+          {cartProducts.length >= 1 && <ProductCartDetailsButton />}
+        </Card>
+      )}
+    </>
+  );
+};

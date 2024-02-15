@@ -13,6 +13,8 @@ export const Header = () => {
         padding: 1,
         cursor: 'pointer',
         marginBottom: 5,
+        minWidth: '100%',
+        // maxHeight: '22vh',
       }}
     >
       <Container maxWidth="xl">
