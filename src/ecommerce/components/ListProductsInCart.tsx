@@ -4,11 +4,11 @@ import { ProductCartDetailsButton } from './ProductCartDetailsButton';
 
 export const ListProductsInCart = () => {
   const { cartsProducts } = useSelectorAndDispatch();
-  const { cantProdInCart, cartProducts } = cartsProducts;
+  const { cartProducts } = cartsProducts;
 
   return (
     <>
-      {cartProducts.length <= 3 ? (
+      {cartProducts.length < 3 ? (
         <ProductInCart cartProducts={cartProducts} />
       ) : (
         <ProductCartDetailsButton />

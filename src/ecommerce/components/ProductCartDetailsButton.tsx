@@ -11,12 +11,13 @@ export const ProductCartDetailsButton = () => {
       size="small"
       sx={{
         float: 'right',
-        width: '280px',
+        width: '281px',
         height: '50px',
         right: '0px',
         position: 'fixed',
+        zIndex: '1500',
       }}
-      onClick={() => navigate(``)}
+      onClick={() => navigate(`cart/details`)}
       startIcon={<ReadMoreIcon />}
     >
       Ver detalles de los productos en el carrito

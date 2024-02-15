@@ -9,6 +9,7 @@ import { ProductsDetails } from '../components/ProductsDetails';
 import { EcommerceLayout } from '../layouts/EcommerceLayout';
 import { ListCardProduct } from '../pages/ListCardProduct';
 import { NoFoundPage } from '../pages/NoFoundPage';
+import { ProductCartDetails } from '../pages/ProductCartDetails';
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
           {
             path: 'details/:id',
             element: <ProductsDetails />,
+          },
+          {
+            path: 'cart/details',
+            element: <ProductCartDetails />,
           },
         ],
       },
