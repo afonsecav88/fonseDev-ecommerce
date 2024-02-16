@@ -8,7 +8,6 @@ export const ListProductsInCart = () => {
   const { cartProducts } = cartsProducts;
   const { isRouteCartDetails } = useCheckRoute();
 
-  console.log(isRouteCartDetails);
   return (
     <>
       {!isRouteCartDetails && cartProducts.length <= 2 ? (

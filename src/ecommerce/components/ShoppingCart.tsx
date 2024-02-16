@@ -1,17 +1,8 @@
 import { Badge } from '@mui/material';
-import { useSelectorAndDispatch } from '../hooks/useSelectorAndDispatch';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useUpdateProductInCart } from '../hooks/useUpdateProductInCart';
 
 export const ShoppingCart = () => {
-  const { cartsProducts } = useSelectorAndDispatch();
-  const { cantProdInCart } = cartsProducts;
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    cantProdInCart;
-  }, [cantProdInCart]);
-
+  const { cantProdInCart, navigate } = useUpdateProductInCart();
   return (
     <>
       <Badge sx={{ top: '10px' }} badgeContent={cantProdInCart} color="success">
