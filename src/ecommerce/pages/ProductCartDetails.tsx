@@ -52,7 +52,14 @@ export const ProductCartDetails = () => {
           </Typography>
           {cartProducts.map((product) => (
             <div key={product.id}>
-              <CardContent sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+              <CardContent
+                sx={{
+                  display: 'flex',
+                  gap: 1,
+                  flexWrap: 'wrap',
+                  alignItems: 'center',
+                }}
+              >
                 <Typography
                   sx={{ display: 'inline-flex', gap: 1 }}
                   gutterBottom

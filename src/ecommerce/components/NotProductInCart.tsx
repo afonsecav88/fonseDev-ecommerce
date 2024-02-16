@@ -10,8 +10,9 @@ export const NotProductInCart = () => {
         maxWidth="xs"
         sx={{
           display: 'flex',
-          width: '450px',
           justifyContent: 'center',
+          alignItems: 'center',
+          width: '450px',
           gap: 2,
         }}
       >
@@ -20,7 +21,6 @@ export const NotProductInCart = () => {
           sx={{
             display: 'flex',
             justifyContent: 'center',
-            gap: 2,
           }}
         >
           <AlertTitle>
@@ -28,16 +28,16 @@ export const NotProductInCart = () => {
             <strong>Aca se mostraran tus productos </strong>
           </AlertTitle>
           <svg
-            style={{ display: 'flex', width: '150px', alignSelf: 'center' }}
+            style={{ width: '200px' }}
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             stroke="currentColor"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
             />
           </svg>
@@ -47,7 +47,7 @@ export const NotProductInCart = () => {
             variant="contained"
             color="success"
             size="small"
-            sx={{ display: 'flex', marginTop: '10px', alignSelf: 'center' }}
+            sx={{ display: 'flex', marginTop: '10px' }}
           >
             Descubre productos
           </Button>
