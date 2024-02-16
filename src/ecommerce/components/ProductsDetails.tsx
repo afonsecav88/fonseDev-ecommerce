@@ -19,7 +19,17 @@ export const ProductsDetails = () => {
 
   return (
     <Container
-      sx={{ display: 'flex', justifyContent: 'center', maxWidth: 'xs' }}
+      sx={{
+        display: { xs: 'flex', lg: 'flex', xl: 'flex' },
+        justifyContent: {
+          xs: 'start',
+          md: 'center',
+          lg: 'center',
+          xl: 'center',
+        },
+        minWidth: '450px',
+        gap: 2,
+      }}
     >
       {productGetById && (
         <Card sx={{ maxWidth: 345, padding: 3, marginBottom: 2 }}>

@@ -7,12 +7,15 @@ export const NotProductInCart = () => {
   return (
     <>
       <Container
-        maxWidth="xs"
         sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          width: '450px',
+          display: { xs: 'flex', lg: 'flex', xl: 'flex' },
+          justifyContent: {
+            xs: 'start',
+            md: 'center',
+            lg: 'center',
+            xl: 'center',
+          },
+          minWidth: '450px',
           gap: 2,
         }}
       >
@@ -20,7 +23,8 @@ export const NotProductInCart = () => {
           severity="info"
           sx={{
             display: 'flex',
-            justifyContent: 'center',
+            justifyContent: { xs: 'start', md: 'center' },
+            flexWrap: 'wrap',
           }}
         >
           <AlertTitle>
