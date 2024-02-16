@@ -11,7 +11,7 @@ export const ProductInCart = ({ cartProducts }: ProductInCartProps) => {
   const { isRouteCartDetails } = useCheckRoute();
   return (
     <>
-      {isRouteCartDetails && cartProducts.length >= 1 && (
+      {!isRouteCartDetails && cartProducts.length >= 1 && (
         <Card
           sx={{
             display: {
@@ -64,7 +64,7 @@ export const ProductInCart = ({ cartProducts }: ProductInCartProps) => {
               <Divider />
             </div>
           ))}
-          {cartProducts.length >= 1 && <ProductCartDetailsButton />}
+          <ProductCartDetailsButton />
         </Card>
       )}
     </>

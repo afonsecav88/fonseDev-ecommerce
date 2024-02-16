@@ -22,10 +22,6 @@ export const ProductCartDetails = () => {
         <Card
           sx={{
             width: '66%',
-            // position: 'fixed',
-            // top: '80px',
-            // right: '1px',
-            // zIndex: '1500',
             backgroundColor: '#E2E2E2',
           }}
         >
@@ -61,14 +57,7 @@ export const ProductCartDetails = () => {
                   alignItems: 'center',
                 }}
               >
-                <Typography
-                  sx={{ display: 'inline-flex', gap: 1 }}
-                  gutterBottom
-                  variant="subtitle1"
-                  component="div"
-                >
-                  <Avatar src={product.image} />
-                </Typography>
+                <Avatar src={product.image} />
                 <Typography sx={{ width: '40%' }}>{product.title}</Typography>
                 <Typography
                   sx={{ width: '15%' }}
@@ -90,7 +79,6 @@ export const ProductCartDetails = () => {
                   size="small"
                   sx={{ float: 'right', width: '40px', height: '40px' }}
                   onClick={() => {}}
-                  // startIcon={<ArrowForwardIcon />}
                 >
                   +
                 </Button>
@@ -100,7 +88,6 @@ export const ProductCartDetails = () => {
                   size="small"
                   sx={{ float: 'right', width: '40px', height: '40px' }}
                   onClick={() => {}}
-                  // startIcon={<ArrowForwardIcon />}
                 >
                   -
                 </Button>
