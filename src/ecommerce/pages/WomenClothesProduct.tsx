@@ -4,7 +4,7 @@ import { NotProductsLoaded } from '../components/NotProductsLoaded';
 import { useSearchProductByTitle } from '../hooks/useSearchProductByTitle';
 
 export const WomenClothesProduct = () => {
-  const { filteredProduct } = useFilterProductByCategory('jewelery');
+  const { filteredProduct } = useFilterProductByCategory("women's clothing");
 
   const { searchProducts } = useSearchProductByTitle();
   const productListRender = () => {
