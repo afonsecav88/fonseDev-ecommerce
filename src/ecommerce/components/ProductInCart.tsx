@@ -1,17 +1,25 @@
 import { Avatar, Card, CardContent, Divider, Typography } from '@mui/material';
 import { CartProduct } from '../store/models/CartProducts';
 import { ProductCartDetailsButton } from './ProductCartDetailsButton';
+import { useCheckRoute } from '../hooks/useCheckRoute';
 
 interface ProductInCartProps {
   cartProducts: CartProduct[];
 }
 
 export const ProductInCart = ({ cartProducts }: ProductInCartProps) => {
+  const { isRouteCartDetails } = useCheckRoute();
   return (
     <>
-      {cartProducts.length >= 1 && (
+      {isRouteCartDetails && cartProducts.length >= 1 && (
         <Card
           sx={{
+            display: {
+              xs: 'none',
+              md: 'block',
+              lg: 'block',
+              xl: 'block',
+            },
             maxWidth: 280,
             position: 'fixed',
             top: '80px',

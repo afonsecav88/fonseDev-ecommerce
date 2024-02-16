@@ -15,12 +15,13 @@ import { NotProductInCart } from '../components/NotProductInCart';
 export const ProductCartDetails = () => {
   const { cartsProducts } = useSelectorAndDispatch();
   const { cartProducts, cantProdInCart } = cartsProducts;
+
   return (
-    <Container sx={{ display: 'flex', minWidth: '1000px' }}>
+    <Container sx={{ display: 'flex' }}>
       {cantProdInCart ? (
         <Card
           sx={{
-            width: '67%',
+            width: '66%',
             // position: 'fixed',
             // top: '80px',
             // right: '1px',
