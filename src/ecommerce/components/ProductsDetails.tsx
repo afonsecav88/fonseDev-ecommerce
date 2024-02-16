@@ -39,7 +39,7 @@ export const ProductsDetails = () => {
           <Typography
             sx={{ display: 'flex', justifyContent: 'flex-end', mt: 3 }}
           >
-            <AddToCart />
+            <AddToCart productItem={productGetById} />
           </Typography>
           <br />
           <CardMedia

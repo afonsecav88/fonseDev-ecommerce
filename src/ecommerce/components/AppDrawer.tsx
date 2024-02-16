@@ -1,25 +1,23 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import { useState } from 'react';
 import { ListItemDrawer } from '../routes/routerDrawer';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Logo } from '../shared/components/Logo';
 import { ShoppingCart } from './ShoppingCart';
-import { Search } from '../shared/components/Search';
+import MenuIcon from '@mui/icons-material/Menu';
+import IconButton from '@mui/material/IconButton';
 
 type Anchor = 'left';
 
-export default function NavBarDrawer() {
+export const AppDrawer = () => {
   const [state, setState] = useState({
     left: false,
   });
@@ -54,8 +52,16 @@ export default function NavBarDrawer() {
         {listItemDrawer.map(({ id, path, icon }) => (
           <ListItem key={id} disablePadding>
             <ListItemButton>
-              <ListItemIcon>{icon}</ListItemIcon>
-              <ListItemText primary={path} />
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? 'nav-active' : 'disable-visited-color'
+                }
+                style={{ textDecoration: 'none' }}
+                to={path}
+              >
+                <ListItemIcon>{icon}</ListItemIcon>
+                <ListItemText primary={path} />
+              </NavLink>
             </ListItemButton>
           </ListItem>
         ))}
@@ -72,19 +78,17 @@ export default function NavBarDrawer() {
   );
 
   return (
-    <div>
-      {(['left'] as const).map((anchor) => (
-        <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
-          <Drawer
-            anchor={anchor}
-            open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
-          >
-            {list(anchor)}
-          </Drawer>
-        </React.Fragment>
-      ))}
-    </div>
+    <>
+      <IconButton onClick={toggleDrawer('left', true)}>
+        <MenuIcon />
+      </IconButton>
+      <Drawer
+        anchor="left"
+        open={state['left']}
+        onClose={toggleDrawer('left', false)}
+      >
+        {list('left')}
+      </Drawer>
+    </>
   );
-}
+};

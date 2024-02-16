@@ -41,3 +41,16 @@ a:link {
   width: 80px;
   height: 60px;
 }
+.nav-active {
+  color: rgb(62, 197, 197);
+  transition: all .3s ease-out;
+  
+}
+
+.disable-visited-color { 
+  color: inherit;
+}
+
+a.disable-visited-color:visited {
+  color: inherit; 
+}
