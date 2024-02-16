@@ -6,22 +6,22 @@ import WomanIcon from '@mui/icons-material/Woman';
 export const ListItemDrawer = [
   {
     id: 1,
-    path: 'electronics',
+    path: 'ELECTRONICS',
     icon: <PowerIcon />,
   },
   {
     id: 2,
-    path: 'jewelery',
+    path: 'JEWELERY',
     icon: <DiamondIcon />,
   },
   {
     id: 3,
-    path: 'men-clothing',
+    path: 'MEN-CLOTHING',
     icon: <ManIcon />,
   },
   {
     id: 4,
-    path: 'women-clothing',
+    path: 'WOMEN-CLOTHING',
     icon: <WomanIcon />,
   },
 ];
