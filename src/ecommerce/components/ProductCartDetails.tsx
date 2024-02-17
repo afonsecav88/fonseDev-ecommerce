@@ -1,100 +1,78 @@
 import {
-  Card,
   Typography,
-  Badge,
   CardContent,
   Avatar,
   Button,
   Divider,
 } from '@mui/material';
+
 import { CartProduct } from '../store/models/CartProducts';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useGetProductById } from '../hooks/useGetProductById';
+import { useAddToCart } from '../hooks/useAddToCart';
+import { useDeleteProductById } from '../hooks/useDeleteProductById';
 interface ProductCartMoreDetailsProp {
-  cartProducts: CartProduct[];
-  cantProdInCart: number;
+  product: CartProduct;
 }
 
 export default function ProductCartDetails({
-  cartProducts,
-  cantProdInCart,
+  product,
 }: ProductCartMoreDetailsProp) {
+  const { productGetById } = useGetProductById();
+  const { handleClick } = useAddToCart();
+  const { deleteProductById } = useDeleteProductById();
+
+  const handleCLickAdd = () => {
+    const productfounded = productGetById(product.id);
+    if (!productfounded) return;
+    handleClick(productfounded);
+  };
+
   return (
-    <Card
-      sx={{
-        width: '66%',
-        backgroundColor: '#E2E2E2',
-      }}
-    >
-      <Typography
+    <div key={product.id}>
+      <CardContent
         sx={{
           display: 'flex',
-          justifyContent: 'space-evenly',
-          gap: 2,
-          padding: 1,
-          backgroundColor: '#51D27F',
+          gap: 1,
           flexWrap: 'wrap',
+          alignItems: 'center',
         }}
-        gutterBottom
-        variant="overline"
-        component="div"
       >
-        <strong>Productos en el carrito</strong>
-        <Badge
-          sx={{ marginTop: '10px' }}
-          badgeContent={cantProdInCart}
-          color="primary"
+        <Avatar src={product.image} />
+        <Typography sx={{ width: '40%' }}>{product.title}</Typography>
+        <Typography
+          sx={{ width: '15%' }}
+          variant="body2"
+          color="text.secondary"
         >
-          <ShoppingCartIcon color="action" />
-        </Badge>
-      </Typography>
-      {cartProducts.map((product) => (
-        <div key={product.id}>
-          <CardContent
-            sx={{
-              display: 'flex',
-              gap: 1,
-              flexWrap: 'wrap',
-              alignItems: 'center',
-            }}
-          >
-            <Avatar src={product.image} />
-            <Typography sx={{ width: '40%' }}>{product.title}</Typography>
-            <Typography
-              sx={{ width: '15%' }}
-              variant="body2"
-              color="text.secondary"
-            >
-              <strong>Precio: $ </strong> {product.price}
-            </Typography>
-            <Typography
-              sx={{ width: '15%' }}
-              variant="body2"
-              color="text.secondary"
-            >
-              <strong>Cantidad:</strong> {product.count}
-            </Typography>
-            <Button
-              variant="contained"
-              color="info"
-              size="small"
-              sx={{ float: 'right', width: '40px', height: '40px' }}
-              onClick={() => {}}
-            >
-              +
-            </Button>
-            <Button
-              variant="contained"
-              color="info"
-              size="small"
-              sx={{ float: 'right', width: '40px', height: '40px' }}
-              onClick={() => {}}
-            >
-              -
-            </Button>
-          </CardContent>
-          <Divider />
-        </div>
-      ))}
-    </Card>
+          <strong>Precio: $ </strong> {product.price}
+        </Typography>
+        <Typography
+          sx={{ width: '15%' }}
+          variant="body2"
+          color="text.secondary"
+        >
+          <strong>Cantidad:</strong> {product.count}
+        </Typography>
+        <Button
+          variant="contained"
+          color="info"
+          size="small"
+          sx={{ float: 'right', width: '40px', height: '40px' }}
+          onClick={() => handleCLickAdd()}
+        >
+          +
+        </Button>
+        <Button
+          variant="contained"
+          color="info"
+          size="small"
+          sx={{ float: 'right', width: '40px', height: '40px' }}
+          onClick={() => deleteProductById(product.id)}
+        >
+          -
+        </Button>
+      </CardContent>
+      <Divider />
+    </div>
   );
 }
