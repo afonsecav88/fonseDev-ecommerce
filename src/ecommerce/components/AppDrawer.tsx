@@ -57,7 +57,7 @@ export const AppDrawer = () => {
                   isActive ? 'nav-active' : 'disable-visited-color'
                 }
                 style={{ textDecoration: 'none' }}
-                to={path}
+                to={path.toLocaleLowerCase()}
               >
                 <ListItemIcon>{icon}</ListItemIcon>
                 <ListItemText primary={path} />

@@ -9,7 +9,7 @@ export const useUpdateProductInCart = () => {
 
   useEffect(() => {
     cantProdInCart;
-  }, [cantProdInCart]);
+  }, [cantProdInCart, cartsProducts]);
 
   return { navigate, cantProdInCart };
 };
