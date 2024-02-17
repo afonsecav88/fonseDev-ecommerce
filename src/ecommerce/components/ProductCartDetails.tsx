@@ -18,13 +18,13 @@ export default function ProductCartDetails({
   product,
 }: ProductCartMoreDetailsProp) {
   const { productGetById } = useGetProductById();
-  const { handleClick } = useAddToCart();
+  const { addCartProduct } = useAddToCart();
   const { deleteProductById } = useDeleteProductById();
 
   const handleCLickAdd = () => {
-    const productfounded = productGetById(product.id);
-    if (!productfounded) return;
-    handleClick(productfounded);
+    const productFounded = productGetById(product.id);
+    if (!productFounded) return;
+    addCartProduct(productFounded);
   };
 
   return (

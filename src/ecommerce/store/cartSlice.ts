@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { CartProduct } from './models/CartProducts';
 import { CartInitialState } from './models/CartInitialState';
+
 const initialState: CartInitialState = {
   cantProdInCart: 0,
   cartProducts: [],
@@ -40,14 +41,6 @@ export const cartSlice = createSlice({
         // state.cartProducts.splice(indexProduct, 1);
       }
     },
-
-    // deleteProduct: (state, action: PayloadAction<number>) => {
-    //   state.cantProdInCart -= 1;
-    //   const product = state.cartProducts.filter(
-    //     (product) => product.id !== action.payload,
-    //   );
-    //   state.cartProducts = product;
-    // },
   },
 });
 // Action creators are generated for each case reducer function
