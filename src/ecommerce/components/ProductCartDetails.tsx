@@ -4,6 +4,7 @@ import {
   Avatar,
   Button,
   Divider,
+  Box,
 } from '@mui/material';
 
 import { CartProduct } from '../store/models/CartProducts';
@@ -53,25 +54,28 @@ export default function ProductCartDetails({
         >
           <strong>Cantidad:</strong> {product.count}
         </Typography>
-        <Button
-          variant="contained"
-          color="info"
-          size="small"
-          sx={{ float: 'right', width: '40px', height: '40px' }}
-          onClick={() => handleCLickAdd()}
-        >
-          +
-        </Button>
-        <Button
-          variant="contained"
-          color="info"
-          size="small"
-          sx={{ float: 'right', width: '40px', height: '40px' }}
-          onClick={() => deleteProductById(product.id)}
-        >
-          -
-        </Button>
+        <Box>
+          <Button
+            variant="contained"
+            color="info"
+            size="small"
+            sx={{ width: '40px', height: '40px' }}
+            onClick={() => handleCLickAdd()}
+          >
+            +
+          </Button>
+          <Button
+            variant="contained"
+            color="info"
+            size="small"
+            sx={{ width: '40px', height: '40px' }}
+            onClick={() => deleteProductById(product.id)}
+          >
+            -
+          </Button>
+        </Box>
       </CardContent>
+
       <Divider />
     </div>
   );

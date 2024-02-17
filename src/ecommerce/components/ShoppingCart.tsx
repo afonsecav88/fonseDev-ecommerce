@@ -3,6 +3,7 @@ import { useUpdateProductInCart } from '../hooks/useUpdateProductInCart';
 
 export const ShoppingCart = () => {
   const { cantProdInCart, navigate } = useUpdateProductInCart();
+
   return (
     <>
       <Badge sx={{ top: '10px' }} badgeContent={cantProdInCart} color="success">
