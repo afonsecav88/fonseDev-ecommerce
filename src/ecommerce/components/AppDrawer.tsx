@@ -14,10 +14,12 @@ import { Logo } from '../shared/components/Logo';
 import { ShoppingCart } from './ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
+import { useUpdateProductInCart } from '../hooks/useUpdateProductInCart';
 
 type Anchor = 'left';
 
 export const AppDrawer = () => {
+  const { navigate } = useUpdateProductInCart();
   const [state, setState] = useState({
     left: false,
   });
@@ -68,11 +70,11 @@ export const AppDrawer = () => {
       </List>
       <Divider />
       <List>
-        <ListItem disablePadding>
-          <ListItemButton>
+        <ListItemButton onClick={() => navigate(`cart/details`)}>
+          <ListItem sx={{ display: 'flex' }}>
             <ShoppingCart />
-          </ListItemButton>
-        </ListItem>
+          </ListItem>
+        </ListItemButton>
       </List>
     </Box>
   );

@@ -6,12 +6,11 @@ import { useSelectorAndDispatch } from './useSelectorAndDispatch';
 
 export const useFilterProductByCategory = (category: ProductCategory) => {
   const { products, dispatch } = useSelectorAndDispatch();
+  const { product } = products;
 
   useEffect(() => {
     dispatch(getAllProducts());
   }, [dispatch]);
-
-  const { product } = products;
 
   const filteredProduct = (): ProductEntity[] => {
     return product.filter(
