@@ -26,11 +26,28 @@ export const cartSlice = createSlice({
     },
     deleteProduct: (state, action: PayloadAction<number>) => {
       state.cantProdInCart -= 1;
-      const product = state.cartProducts.filter(
-        (product) => product.id !== action.payload,
+      const product = state.cartProducts.find(
+        (product) => product.id === action.payload,
       );
-      state.cartProducts = product;
+      if (product && product?.count > 1) {
+        product.count -= 1;
+      } else {
+        state.cartProducts = state.cartProducts.filter(
+          (prod) => prod.id !== product!.id,
+        );
+        // another way to implement  this method
+        // const indexProduct = state.cartProducts.indexOf(product!);
+        // state.cartProducts.splice(indexProduct, 1);
+      }
     },
+
+    // deleteProduct: (state, action: PayloadAction<number>) => {
+    //   state.cantProdInCart -= 1;
+    //   const product = state.cartProducts.filter(
+    //     (product) => product.id !== action.payload,
+    //   );
+    //   state.cartProducts = product;
+    // },
   },
 });
 // Action creators are generated for each case reducer function
