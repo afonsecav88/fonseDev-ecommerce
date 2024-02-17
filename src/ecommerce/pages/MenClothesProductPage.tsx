@@ -1,9 +1,9 @@
 import { useFilterProductByCategory } from '../hooks/useFilterProductByCategory';
-import { CardProduct } from '../components/CardProduct';
+import { ProductCard } from '../components/ProductCard';
 import { NotProductsLoaded } from '../components/NotProductsLoaded';
 import { useSearchProductByTitle } from '../hooks/useSearchProductByTitle';
 
-export const MenClothesProduct = () => {
+export const MenClothesProductPage = () => {
   const { filteredProduct } = useFilterProductByCategory("men's clothing");
 
   const { searchProducts } = useSearchProductByTitle();
@@ -16,7 +16,7 @@ export const MenClothesProduct = () => {
     <>
       {filteredProduct() ? (
         productListRender().map((productItem) => (
-          <CardProduct key={productItem.id} productItem={productItem} />
+          <ProductCard key={productItem.id} productItem={productItem} />
         ))
       ) : (
         <NotProductsLoaded />

@@ -1,11 +1,11 @@
 import { useFilterProductByCategory } from '../hooks/useFilterProductByCategory';
-
-import { CardProduct } from '../components/CardProduct';
+import { ProductCard } from '../components/ProductCard';
 import { NotProductsLoaded } from '../components/NotProductsLoaded';
 import { useSearchProductByTitle } from '../hooks/useSearchProductByTitle';
+import { ProductEntity } from '../store/models/ProductEntity';
 
-export const JeweleryProduct = () => {
-  const { filteredProduct } = useFilterProductByCategory('jewelery');
+export const ElectronicProductPage = () => {
+  const { filteredProduct } = useFilterProductByCategory('electronics');
   const { searchProducts } = useSearchProductByTitle();
 
   const productListRender = () => {
@@ -15,8 +15,8 @@ export const JeweleryProduct = () => {
   return (
     <>
       {filteredProduct() ? (
-        productListRender().map((productItem) => (
-          <CardProduct key={productItem.id} productItem={productItem} />
+        productListRender().map((productItem: ProductEntity) => (
+          <ProductCard key={productItem.id} productItem={productItem} />
         ))
       ) : (
         <NotProductsLoaded />

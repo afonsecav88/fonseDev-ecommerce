@@ -1,15 +1,15 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import { App } from '../../App';
-import { ElectronicProduct } from '../pages/ElectronicProduct';
-import { JeweleryProduct } from '../pages/JeweleryProduct';
-import { MenClothesProduct } from '../pages/MenClothesProduct';
-import { WomenClothesProduct } from '../pages/WomenClothesProduct';
+import { ElectronicProductPage } from '../pages/ElectronicProductPage';
+import { JeweleryProductPage } from '../pages/JeweleryProductPage';
+import { MenClothesProductPage } from '../pages/MenClothesProductPage';
+import { WomenClothesProductPage } from '../pages/WomenClothesProductPage';
 import { ProductsDetails } from '../components/ProductsDetails';
 import { EcommerceLayout } from '../layouts/EcommerceLayout';
-import { ListCardProduct } from '../pages/ListCardProduct';
+import { ListCardProductPage } from '../pages/ListCardProductPage';
 import { NoFoundPage } from '../pages/NoFoundPage';
-import { ProductCartDetails } from '../pages/ProductCartDetails';
+import { ProductCartDetailsPage } from '../pages/ProductCartDetailsPage';
 
 export const router = createBrowserRouter([
   {
@@ -22,23 +22,23 @@ export const router = createBrowserRouter([
         children: [
           {
             path: '',
-            element: <ListCardProduct />,
+            element: <ListCardProductPage />,
           },
           {
             path: 'electronics',
-            element: <ElectronicProduct />,
+            element: <ElectronicProductPage />,
           },
           {
             path: 'jewelery',
-            element: <JeweleryProduct />,
+            element: <JeweleryProductPage />,
           },
           {
             path: 'men-clothing',
-            element: <MenClothesProduct />,
+            element: <MenClothesProductPage />,
           },
           {
             path: 'women-clothing',
-            element: <WomenClothesProduct />,
+            element: <WomenClothesProductPage />,
           },
           {
             path: 'details/:id',
@@ -46,7 +46,7 @@ export const router = createBrowserRouter([
           },
           {
             path: 'cart/details',
-            element: <ProductCartDetails />,
+            element: <ProductCartDetailsPage />,
           },
         ],
       },

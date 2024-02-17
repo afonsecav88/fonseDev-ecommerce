@@ -14,7 +14,7 @@ interface CardProductProps {
   productItem: ProductEntity;
 }
 
-export const CardProduct = ({ productItem }: CardProductProps) => {
+export const ProductCard = ({ productItem }: CardProductProps) => {
   const navigate = useNavigate();
   const { title, description, image, price, category, rating, id } =
     productItem;

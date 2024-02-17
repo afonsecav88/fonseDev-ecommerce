@@ -1,13 +1,13 @@
 import { Avatar, Card, CardContent, Divider, Typography } from '@mui/material';
 import { CartProduct } from '../store/models/CartProducts';
-import { ProductCartDetailsButton } from './ProductCartDetailsButton';
+import { CartMoreDetailsButton } from './CartMoreDetailsButton';
 import { useCheckRoute } from '../hooks/useCheckRoute';
 
 interface ProductInCartProps {
   cartProducts: CartProduct[];
 }
 
-export const ProductInCart = ({ cartProducts }: ProductInCartProps) => {
+export const ProductInCartCard = ({ cartProducts }: ProductInCartProps) => {
   const { isRouteCartDetails } = useCheckRoute();
   return (
     <>
@@ -64,7 +64,7 @@ export const ProductInCart = ({ cartProducts }: ProductInCartProps) => {
               <Divider />
             </div>
           ))}
-          <ProductCartDetailsButton />
+          <CartMoreDetailsButton />
         </Card>
       )}
     </>

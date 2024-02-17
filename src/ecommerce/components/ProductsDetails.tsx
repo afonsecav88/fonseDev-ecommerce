@@ -13,9 +13,14 @@ import { AddToCart } from './AddToCart';
 import { useNavigate, useParams } from 'react-router-dom';
 
 export const ProductsDetails = () => {
-  const { id } = useParams();
-  const { productGetById } = useGetProductById(+id!);
   const navigate = useNavigate();
+  const { id } = useParams();
+  const { productGetById } = useGetProductById();
+  if (!id) {
+    return;
+  }
+
+  const productFounded = productGetById(+id);
 
   return (
     <Container
@@ -31,32 +36,32 @@ export const ProductsDetails = () => {
         gap: 2,
       }}
     >
-      {productGetById && (
+      {productFounded && (
         <Card sx={{ maxWidth: 345, padding: 3, marginBottom: 2 }}>
           <Typography variant="h6">
-            <strong> {productGetById.title}</strong>
+            <strong> {productFounded.title}</strong>
           </Typography>
           <Typography
             sx={{ display: 'flex', justifyContent: 'flex-end', mt: 3 }}
           >
-            <AddToCart productItem={productGetById} />
+            <AddToCart productItem={productFounded} />
           </Typography>
           <br />
           <CardMedia
             sx={{ height: '100%vh', width: '100%', padding: 4 }}
-            image={productGetById.image}
-            title={productGetById.title}
+            image={productFounded.image}
+            title={productFounded.title}
             component="img"
           />
           <CardContent>
             <Typography variant="h6" component="div" sx={{ marginY: 2 }}>
-              <strong> Category: </strong> {productGetById.category}
+              <strong> Category: </strong> {productFounded.category}
             </Typography>
             <Typography variant="body1" sx={{ marginY: 2 }}>
-              {productGetById.description}
+              {productFounded.description}
             </Typography>
             <Typography variant="body2">
-              <strong> Price: </strong> {`$ ${productGetById.price}`}
+              <strong> Price: </strong> {`$ ${productFounded.price}`}
             </Typography>
             <Typography
               variant="body2"
@@ -68,8 +73,8 @@ export const ProductsDetails = () => {
                 marginY: 2,
               }}
             >
-              <strong>Rate:</strong> {productGetById.rating.rate}{' '}
-              <strong> Count: </strong> {productGetById.rating.count}
+              <strong>Rate:</strong> {productFounded.rating.rate}{' '}
+              <strong> Count: </strong> {productFounded.rating.count}
             </Typography>
           </CardContent>
           <Button

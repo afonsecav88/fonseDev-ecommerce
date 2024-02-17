@@ -1,13 +1,12 @@
 import { useFilterProductByCategory } from '../hooks/useFilterProductByCategory';
-import { CardProduct } from '../components/CardProduct';
+import { ProductCard } from '../components/ProductCard';
 import { NotProductsLoaded } from '../components/NotProductsLoaded';
 import { useSearchProductByTitle } from '../hooks/useSearchProductByTitle';
-import { ProductEntity } from '../store/models/ProductEntity';
 
-export const ElectronicProduct = () => {
-  const { filteredProduct } = useFilterProductByCategory('electronics');
+export const WomenClothesProductPage = () => {
+  const { filteredProduct } = useFilterProductByCategory("women's clothing");
+
   const { searchProducts } = useSearchProductByTitle();
-
   const productListRender = () => {
     return searchProducts().length < 1 ? filteredProduct() : searchProducts();
   };
@@ -15,8 +14,8 @@ export const ElectronicProduct = () => {
   return (
     <>
       {filteredProduct() ? (
-        productListRender().map((productItem: ProductEntity) => (
-          <CardProduct key={productItem.id} productItem={productItem} />
+        productListRender().map((productItem) => (
+          <ProductCard key={productItem.id} productItem={productItem} />
         ))
       ) : (
         <NotProductsLoaded />

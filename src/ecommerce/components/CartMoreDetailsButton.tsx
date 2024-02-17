@@ -3,7 +3,7 @@ import ReadMoreIcon from '@mui/icons-material/ReadMore';
 import { useNavigate } from 'react-router-dom';
 import { useCheckRoute } from '../hooks/useCheckRoute';
 
-export const ProductCartDetailsButton = () => {
+export const CartMoreDetailsButton = () => {
   const navigate = useNavigate();
   const { isRouteCartDetails } = useCheckRoute();
   return (

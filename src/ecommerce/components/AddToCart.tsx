@@ -7,13 +7,13 @@ interface AddToCartProps {
 }
 
 export const AddToCart = ({ productItem }: AddToCartProps) => {
-  const { handleClick } = useAddToCart(productItem);
+  const { handleClick } = useAddToCart();
 
   if (!productItem) return;
 
   return (
     <>
-      <Button onClick={() => handleClick()} variant="outlined">
+      <Button onClick={() => handleClick(productItem)} variant="outlined">
         {' '}
         <AddIcon titleAccess="Add to Cart" color="primary" />
       </Button>
