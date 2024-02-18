@@ -1,4 +1,5 @@
 import AddIcon from '@mui/icons-material/Add';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Button } from '@mui/material';
 import { ProductEntity } from '../store/models/ProductEntity';
 import { useAddToCart } from '../hooks/useAddToCart';
@@ -14,8 +15,8 @@ export const AddToCart = ({ productItem }: AddToCartProps) => {
   return (
     <>
       <Button onClick={() => addCartProduct(productItem)} variant="outlined">
-        {' '}
         <AddIcon titleAccess="Add to Cart" color="primary" />
+        <ShoppingCartIcon titleAccess="Add to Cart" color="primary" />
       </Button>
     </>
   );

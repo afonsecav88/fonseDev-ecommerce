@@ -33,7 +33,7 @@ export default function ProductCartDetails({
       <CardContent
         sx={{
           display: 'flex',
-          gap: 1,
+          gap: { sm: 1 },
           flexWrap: 'wrap',
           alignItems: 'center',
         }}
@@ -59,7 +59,7 @@ export default function ProductCartDetails({
             variant="contained"
             color="info"
             size="small"
-            sx={{ width: '40px', height: '40px' }}
+            sx={{ width: '30px', height: '40px' }}
             onClick={() => handleCLickAdd()}
           >
             +
@@ -68,7 +68,7 @@ export default function ProductCartDetails({
             variant="contained"
             color="info"
             size="small"
-            sx={{ width: '40px', height: '40px' }}
+            sx={{ width: '40px', height: '40px', marginLeft: '20px' }}
             onClick={() => deleteProductById(product.id)}
           >
             -

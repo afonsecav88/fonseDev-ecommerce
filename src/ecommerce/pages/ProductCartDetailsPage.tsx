@@ -8,11 +8,11 @@ export const ProductCartDetailsPage = () => {
   const { cartProducts, cantProdInCart } = cartsProducts;
 
   return (
-    <Container sx={{ display: 'flex' }}>
+    <Container sx={{ display: 'flex', maxWidth: 900 }}>
       {cantProdInCart ? (
         <Card
           sx={{
-            width: '66%',
+            width: '100%',
             backgroundColor: '#E2E2E2',
           }}
         >

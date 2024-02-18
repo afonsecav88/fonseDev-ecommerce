@@ -54,3 +54,11 @@ a:link {
 a.disable-visited-color:visited {
   color: inherit; 
 }
+
+.cart-description-truncate {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  /* truncate to 4 lines */
+  -webkit-line-clamp: 5;
+}

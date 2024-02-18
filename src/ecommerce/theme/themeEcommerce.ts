@@ -52,7 +52,7 @@ themeEcommerce.typography.body1 = {
   },
   [themeEcommerce.breakpoints.down('sm')]: {
     fontFamily: 'Verdana, Roboto, Raleway',
-    fontSize: '16px',
+    fontSize: '15px',
     letterSpacing: 2,
   },
 };
