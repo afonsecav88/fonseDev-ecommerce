@@ -10,7 +10,7 @@ export const Header = () => {
     <>
       <AppBar
         position="sticky"
-       color={'primary'}
+        color={'primary'}
         sx={{
           display: {
             xs: 'none',
