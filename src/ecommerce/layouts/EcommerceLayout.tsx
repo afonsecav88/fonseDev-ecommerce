@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { Header } from '../shared/components/Header';
 import { ListProductsInCart } from '../components/ListProductsInCart';
 import { useNotifications } from '../hooks/useNotifications';
+import CartDrawer from '../components/CartDrawer';
 
 export const EcommerceLayout = () => {
   const { ToastContainer } = useNotifications();
@@ -29,6 +30,7 @@ export const EcommerceLayout = () => {
           flexWrap: 'wrap',
         }}
       >
+        <CartDrawer />
         <Outlet />
       </Container>
     </>
