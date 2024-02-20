@@ -11,7 +11,7 @@ export const ListItemDrawer = [
   },
   {
     id: 2,
-    path: 'JEWELERY',
+    path: 'JEWELRY',
     icon: <DiamondIcon />,
   },
   {

@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
             element: <ElectronicProductPage />,
           },
           {
-            path: 'jewelery',
+            path: 'jewelry',
             element: <JeweleryProductPage />,
           },
           {

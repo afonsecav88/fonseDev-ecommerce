@@ -59,7 +59,7 @@ export const Header = () => {
           <Button
             color="inherit"
             component={NavLink}
-            to="jewelery"
+            to="jewelry"
             sx={{
               mt: 1,
               color: '#fff',
@@ -68,7 +68,7 @@ export const Header = () => {
               },
             }}
           >
-            jewelery
+            jewelry
           </Button>
           <Button
             color="inherit"
