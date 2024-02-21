@@ -26,25 +26,57 @@ export default function ProductCartDetails({
       key={product.id}
       sx={{
         display: 'flex',
-        gap: { sm: 1 },
+        flexDirection: { xs: 'column', md: 'row' },
+        gap: { xs: 2 },
         flexWrap: 'wrap',
         alignItems: 'center',
+        alignContent: 'center',
       }}
     >
       <Avatar src={product.image} />
-      <Typography sx={{ width: '40%' }}>{product.title}</Typography>
-      <Typography sx={{ width: '15%' }} variant="body2" color="text.secondary">
+      <Typography
+        sx={{
+          width: {
+            sx: '80%',
+            md: '40%',
+            textAlign: 'center',
+            marginBottom: 4,
+          },
+        }}
+      >
+        {product.title}
+      </Typography>
+      <Typography
+        sx={{
+          width: {
+            sx: '80%',
+            md: '20%',
+          },
+          marginX: 2,
+        }}
+        variant="body1"
+        color="text.secondary"
+      >
         <strong>Precio: $ </strong> {product.price}
       </Typography>
-      <Typography sx={{ width: '15%' }} variant="body2" color="text.secondary">
+      <Typography
+        sx={{
+          width: {
+            sx: '80%',
+            md: '20%',
+          },
+        }}
+        variant="body1"
+        color="text.secondary"
+      >
         <strong>Cantidad:</strong> {product.count}
       </Typography>
-      <Box>
+      <Box sx={{ marginY: 2 }}>
         <Button
           variant="contained"
           color="info"
           size="small"
-          sx={{ width: '30px', height: '40px' }}
+          sx={{ width: '40px', height: '40px', marginLeft: '20px' }}
           onClick={() => handleCLickAdd()}
         >
           +
