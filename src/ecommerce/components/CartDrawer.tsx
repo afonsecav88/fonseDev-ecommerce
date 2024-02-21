@@ -6,17 +6,18 @@ import {
   List,
   ListItem,
   ListItemButton,
-  ListItemIcon,
   ListItemText,
   Chip,
   Avatar,
   Typography,
+  Stack,
 } from '@mui/material';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import { useState } from 'react';
 import { ShoppingCart } from './ShoppingCart';
 import { useUpdateProductInCart } from '../hooks/useUpdateProductInCart';
 import { CartProduct } from '../store/models/CartProducts';
+import { useCalcTotalPrice } from '../hooks/useCalcTotalPrice';
 
 interface ProductInCartProps {
   cartProducts: CartProduct[];
@@ -25,11 +26,13 @@ interface ProductInCartProps {
 export const CartDrawer = ({ cartProducts }: ProductInCartProps) => {
   const { navigate } = useUpdateProductInCart();
   const [open, setOpen] = useState(false);
+  const { calcTotalPrice } = useCalcTotalPrice();
 
   return (
     <Container sx={{ display: 'grid', gap: 4 }}>
       <Chip
         sx={{
+          display: { xs: 'none', sm: 'flex' },
           float: 'right',
           width: '200px',
           height: '50px',
@@ -71,7 +74,7 @@ export const CartDrawer = ({ cartProducts }: ProductInCartProps) => {
           <Divider />
           <List sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
             {cartProducts.map(({ id, count, image, price, title }) => (
-              <div key={id}>
+              <Stack key={id}>
                 <ListItem disablePadding>
                   <Avatar src={image} sx={{ marginX: 2 }} />
                   <ListItemText
@@ -91,8 +94,15 @@ export const CartDrawer = ({ cartProducts }: ProductInCartProps) => {
                   </ListItemText>
                 </ListItem>
                 <Divider />
-              </div>
+              </Stack>
             ))}
+            <List>
+              <ListItemText sx={{ width: '220px', marginX: 2 }}>
+                <Typography variant="body2" color="text.secondary">
+                  <strong>Precio total 💲:</strong> {calcTotalPrice()}
+                </Typography>
+              </ListItemText>
+            </List>
           </List>
         </Box>
       </Drawer>
