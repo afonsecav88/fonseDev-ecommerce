@@ -9,11 +9,11 @@ import {
   ListItemIcon,
   ListItemText,
   Chip,
+  Avatar,
+  Typography,
 } from '@mui/material';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { Logo } from '../shared/components/Logo';
 import { ShoppingCart } from './ShoppingCart';
 import { useUpdateProductInCart } from '../hooks/useUpdateProductInCart';
 import { CartProduct } from '../store/models/CartProducts';
@@ -31,50 +31,68 @@ export const CartDrawer = ({ cartProducts }: ProductInCartProps) => {
       <Chip
         sx={{
           float: 'right',
-          width: '281px',
+          width: '200px',
           height: '50px',
           right: '10px',
           position: 'fixed',
+          marginBottom: 10,
         }}
         icon={<ShoppingCartCheckoutIcon />}
         color="primary"
-        label="Ver productos en el carrito"
+        label="Ver carrito"
         variant="outlined"
         onClick={() => setOpen(true)}
       />
 
-      <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
+      <Drawer
+        sx={{ display: 'flex' }}
+        anchor="right"
+        open={open}
+        onClose={() => setOpen(false)}
+      >
         {/* <ProductInCartCard cartProducts={cartProducts} /> */}
 
-        <Box sx={{ auto: 250 }} role="presentation">
-          <NavLink to={'/ecommerce'}>
-            <Logo />
-          </NavLink>
-          <List>
-            {cartProducts.map(({ id, count, image, price, title }) => (
-              <ListItem key={id} disablePadding>
-                <ListItemButton>
-                  {/* <NavLink
-                    className={({ isActive }) =>
-                      isActive ? 'nav-active' : 'disable-visited-color'
-                    }
-                    style={{ textDecoration: 'none' }}
-                    to={path.toLocaleLowerCase()}
-                  > */}
-                  <ListItemIcon>{image}</ListItemIcon>
-                  <ListItemText primary={title} />
-                  {/* </NavLink> */}
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
-          <Divider />
+        <Box
+          sx={{ display: 'flex', flexDirection: 'column', auto: 250 }}
+          role="presentation"
+        >
           <List>
             <ListItemButton onClick={() => navigate(`cart/details`)}>
-              <ListItem sx={{ display: 'flex' }}>
+              <ListItem sx={{ display: 'flex', gap: 3 }}>
                 <ShoppingCart />
+
+                <ListItemText>
+                  {' '}
+                  <strong> Ver detalles de los productos en el carrito</strong>
+                </ListItemText>
               </ListItem>
             </ListItemButton>
+          </List>
+          <Divider />
+          <List sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+            {cartProducts.map(({ id, count, image, price, title }) => (
+              <div key={id}>
+                <ListItem disablePadding>
+                  <Avatar src={image} sx={{ marginX: 2 }} />
+                  <ListItemText
+                    sx={{ width: '140px', marginX: 2 }}
+                    primary={title}
+                  />
+                  <ListItemText sx={{ width: '120px', marginX: 2 }}>
+                    <Typography variant="body2" color="text.secondary">
+                      <strong>Precio: $ </strong> {price}
+                    </Typography>
+                  </ListItemText>
+
+                  <ListItemText sx={{ width: '120px', marginX: 2 }}>
+                    <Typography variant="body2" color="text.secondary">
+                      <strong>Cantidad:</strong> {count}
+                    </Typography>
+                  </ListItemText>
+                </ListItem>
+                <Divider />
+              </div>
+            ))}
           </List>
         </Box>
       </Drawer>
