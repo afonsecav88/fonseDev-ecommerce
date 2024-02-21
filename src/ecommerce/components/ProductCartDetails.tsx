@@ -50,7 +50,7 @@ export default function ProductCartDetails({
         sx={{
           width: {
             sx: '80%',
-            md: '20%',
+            md: '15%',
           },
           marginX: 2,
         }}
@@ -63,7 +63,7 @@ export default function ProductCartDetails({
         sx={{
           width: {
             sx: '80%',
-            md: '20%',
+            md: '15%',
           },
         }}
         variant="body1"
@@ -83,7 +83,7 @@ export default function ProductCartDetails({
         </Button>
         <Button
           variant="contained"
-          color="info"
+          color="error"
           size="small"
           sx={{ width: '40px', height: '40px', marginLeft: '20px' }}
           onClick={() => deleteProductById(product.id)}

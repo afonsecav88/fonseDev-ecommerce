@@ -9,6 +9,9 @@ export const themeEcommerce = createTheme({
     secondary: {
       main: '#9c27b0',
     },
+    error: {
+      main: '#ef5350',
+    },
     background: {
       default: '#fff',
       paper: '#fff',
