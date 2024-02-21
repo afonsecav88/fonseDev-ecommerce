@@ -1,7 +1,6 @@
 import { useSelectorAndDispatch } from '../hooks/useSelectorAndDispatch';
-import { ProductInCartCard } from './ProductInCartCard';
-import { CartMoreDetailsButton } from './CartMoreDetailsButton';
 import { useCheckRoute } from '../hooks/useCheckRoute';
+import { CartDrawer } from './CartDrawer';
 
 export const ListProductsInCart = () => {
   const { cartsProducts } = useSelectorAndDispatch();
@@ -10,10 +9,8 @@ export const ListProductsInCart = () => {
 
   return (
     <>
-      {!isRouteCartDetails && cartProducts.length <= 2 ? (
-        <ProductInCartCard cartProducts={cartProducts} />
-      ) : (
-        <CartMoreDetailsButton />
+      {!isRouteCartDetails && cartProducts.length >= 1 && (
+        <CartDrawer cartProducts={cartProducts} />
       )}
     </>
   );

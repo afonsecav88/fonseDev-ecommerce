@@ -1,6 +1,5 @@
 import {
   Container,
-  Button,
   Drawer,
   Box,
   Divider,
@@ -9,25 +8,40 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Chip,
 } from '@mui/material';
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import { useState } from 'react';
-import { useSelectorAndDispatch } from '../hooks/useSelectorAndDispatch';
 import { NavLink } from 'react-router-dom';
 import { Logo } from '../shared/components/Logo';
 import { ShoppingCart } from './ShoppingCart';
 import { useUpdateProductInCart } from '../hooks/useUpdateProductInCart';
+import { CartProduct } from '../store/models/CartProducts';
 
-export default function CartDrawer() {
+interface ProductInCartProps {
+  cartProducts: CartProduct[];
+}
+
+export const CartDrawer = ({ cartProducts }: ProductInCartProps) => {
   const { navigate } = useUpdateProductInCart();
-  const { cartsProducts } = useSelectorAndDispatch();
-  const { cartProducts } = cartsProducts;
   const [open, setOpen] = useState(false);
 
   return (
     <Container sx={{ display: 'grid', gap: 4 }}>
-      <Button variant="contained" onClick={() => setOpen(true)}>
-        Open Drawer
-      </Button>
+      <Chip
+        sx={{
+          float: 'right',
+          width: '281px',
+          height: '50px',
+          right: '10px',
+          position: 'fixed',
+        }}
+        icon={<ShoppingCartCheckoutIcon />}
+        color="primary"
+        label="Ver productos en el carrito"
+        variant="outlined"
+        onClick={() => setOpen(true)}
+      />
 
       <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
         {/* <ProductInCartCard cartProducts={cartProducts} /> */}
@@ -66,4 +80,4 @@ export default function CartDrawer() {
       </Drawer>
     </Container>
   );
-}
+};
