@@ -1,8 +1,9 @@
-import { Badge, Card, Container, Typography } from '@mui/material';
+import { Badge, Card, Container, Divider, Typography } from '@mui/material';
 import { useSelectorAndDispatch } from '../hooks/useSelectorAndDispatch';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ProductCartDetails from '../components/ProductCartDetails';
 import { NotProductInCart } from '../components/NotProductInCart';
+import { CartTotalPrice } from '../components/CartTotalPrice';
 export const ProductCartDetailsPage = () => {
   const { cartsProducts } = useSelectorAndDispatch();
   const { cartProducts, cantProdInCart } = cartsProducts;
@@ -41,6 +42,8 @@ export const ProductCartDetailsPage = () => {
           {cartProducts.map((product) => (
             <ProductCartDetails key={product.id} product={product} />
           ))}
+          <Divider />
+          <CartTotalPrice />
         </Card>
       ) : (
         <NotProductInCart />

@@ -17,7 +17,7 @@ import { useState } from 'react';
 import { ShoppingCart } from './ShoppingCart';
 import { useUpdateProductInCart } from '../hooks/useUpdateProductInCart';
 import { CartProduct } from '../store/models/CartProducts';
-import { useCalcTotalPrice } from '../hooks/useCalcTotalPrice';
+import { CartTotalPrice } from './CartTotalPrice';
 
 interface ProductInCartProps {
   cartProducts: CartProduct[];
@@ -26,7 +26,6 @@ interface ProductInCartProps {
 export const CartDrawer = ({ cartProducts }: ProductInCartProps) => {
   const { navigate } = useUpdateProductInCart();
   const [open, setOpen] = useState(false);
-  const { calcTotalPrice } = useCalcTotalPrice();
 
   return (
     <Container sx={{ display: 'grid', gap: 4 }}>
@@ -96,13 +95,7 @@ export const CartDrawer = ({ cartProducts }: ProductInCartProps) => {
                 <Divider />
               </Stack>
             ))}
-            <List>
-              <ListItemText sx={{ width: '220px', marginX: 2 }}>
-                <Typography variant="body2" color="text.secondary">
-                  <strong>Precio total 💲:</strong> {calcTotalPrice()}
-                </Typography>
-              </ListItemText>
-            </List>
+            <CartTotalPrice />
           </List>
         </Box>
       </Drawer>
