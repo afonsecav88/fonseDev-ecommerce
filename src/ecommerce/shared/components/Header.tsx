@@ -56,7 +56,7 @@ export const Header = () => {
             {listItemRouter.map(({ id, path, name }) => (
               <NavLink
                 key={id}
-                to={path}
+                to={path.toLocaleLowerCase()}
                 className={({ isActive }) =>
                   isActive ? 'nav-active' : 'disable-visited-color'
                 }

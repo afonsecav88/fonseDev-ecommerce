@@ -10,7 +10,7 @@ export const Search = () => {
       value={searchTermValue}
       name="search"
       onChange={(e) => setSearchTermValue(e.target.value)}
-      placeholder="      monitor, silver, casual ...    "
+      placeholder="  monitor, silver, casual ...    "
       autoComplete="off"
       disableUnderline
     />
