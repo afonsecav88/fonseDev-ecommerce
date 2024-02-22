@@ -42,7 +42,7 @@ export const ProductCard = ({ productItem }: CardProductProps) => {
         sx={{
           display: 'flex',
           width: '50%',
-          minHeight: '30%',
+          minHeight: '27%',
           paddingTop: '10.25%',
         }}
         image={image}

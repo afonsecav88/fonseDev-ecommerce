@@ -2,6 +2,7 @@
   background-color: rgb(105, 140, 185);
   transition: all .3s ease-out;
   border-radius: 2;
+  text-decoration: none;
 }
 
 .logo-image {
@@ -36,6 +37,5 @@ a.disable-visited-color:visited {
   padding: 6px 8px; 
   border-radius: 8px;
   color: grey;
-  background: rgb(238, 236, 236);
- 
+  background: rgb(238, 236, 236); 
 }

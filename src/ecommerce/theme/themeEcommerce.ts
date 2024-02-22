@@ -10,7 +10,7 @@ export const themeEcommerce = createTheme({
       main: '#9c27b0',
     },
     error: {
-      main: '#CC6E3B',
+      main: '#DBB1BC',
     },
     background: {
       default: '#fff',

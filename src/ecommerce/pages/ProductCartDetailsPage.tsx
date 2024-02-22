@@ -23,7 +23,7 @@ export const ProductCartDetailsPage = () => {
               justifyContent: 'space-evenly',
               gap: 2,
               padding: 1,
-              backgroundColor: '#51D27F',
+              backgroundColor: '#90e0ef',
               flexWrap: 'wrap',
             }}
             gutterBottom

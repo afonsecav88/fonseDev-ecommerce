@@ -5,8 +5,6 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { useState } from 'react';
 import { ListItemRouter } from '../routes/routerDrawer';
 import { NavLink } from 'react-router-dom';
@@ -15,6 +13,7 @@ import { ShoppingCart } from './ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 import { useUpdateProductInCart } from '../hooks/useUpdateProductInCart';
+import { Button } from '@mui/material';
 
 type Anchor = 'left';
 
@@ -38,11 +37,11 @@ export const AppDrawer = () => {
       setState({ ...state, [anchor]: open });
     };
 
-  const listItemDrawer = ListItemRouter;
+  const listItemRouter = ListItemRouter;
 
   const list = (anchor: Anchor) => (
     <Box
-      sx={{ auto: 250 }}
+      sx={{ display: 'flex', flexDirection: 'column', auto: 250 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -50,24 +49,37 @@ export const AppDrawer = () => {
       <NavLink to={'/ecommerce'}>
         <Logo />
       </NavLink>
-      <List>
-        {listItemDrawer.map(({ id, path, icon }) => (
-          <ListItem key={id} disablePadding>
-            <ListItemButton>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? 'nav-active' : 'disable-visited-color'
-                }
-                style={{ textDecoration: 'none' }}
-                to={path.toLocaleLowerCase()}
-              >
-                <ListItemIcon>{icon}</ListItemIcon>
-                <ListItemText primary={path} />
-              </NavLink>
-            </ListItemButton>
-          </ListItem>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          marginY: 2,
+          gap: 2,
+        }}
+      >
+        {listItemRouter.map(({ id, path, name, icon }) => (
+          <NavLink
+            key={id}
+            to={path}
+            className={({ isActive }) =>
+              isActive ? 'nav-active' : 'disable-visited-color'
+            }
+          >
+            <Button
+              sx={{
+                paddingX: 2,
+                width: '100%',
+                justifyContent: 'flex-start',
+              }}
+              color="inherit"
+              fullWidth
+              startIcon={icon}
+            >
+              {name}
+            </Button>
+          </NavLink>
         ))}
-      </List>
+      </Box>
       <Divider />
       <List>
         <ListItemButton onClick={() => navigate(`cart/details`)}>
