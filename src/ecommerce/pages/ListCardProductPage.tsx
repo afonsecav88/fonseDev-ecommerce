@@ -1,8 +1,8 @@
 import { useGetAllProducts } from '../hooks/useGetAllProducts';
 import { useSearchProductByTitle } from '../hooks/useSearchProductByTitle';
 import { ProductCard } from '../components/ProductCard';
-import { NotProductsLoaded } from '../components/NotProductsLoaded';
 import { ProductEntity } from '../store/models/ProductEntity';
+import { LoaderSkeleton } from '../components/NotProductLoadedSkeleton';
 
 export const ListCardProductPage = () => {
   const { isLoading, product } = useGetAllProducts();
@@ -19,7 +19,7 @@ export const ListCardProductPage = () => {
           <ProductCard key={productItem.id} productItem={productItem} />
         ))
       ) : (
-        <NotProductsLoaded />
+        <LoaderSkeleton />
       )}
     </>
   );
