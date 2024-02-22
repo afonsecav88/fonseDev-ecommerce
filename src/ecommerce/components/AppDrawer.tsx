@@ -8,7 +8,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { useState } from 'react';
-import { ListItemDrawer } from '../routes/routerDrawer';
+import { ListItemRouter } from '../routes/routerDrawer';
 import { NavLink } from 'react-router-dom';
 import { Logo } from '../shared/components/Logo';
 import { ShoppingCart } from './ShoppingCart';
@@ -38,7 +38,7 @@ export const AppDrawer = () => {
       setState({ ...state, [anchor]: open });
     };
 
-  const listItemDrawer = ListItemDrawer;
+  const listItemDrawer = ListItemRouter;
 
   const list = (anchor: Anchor) => (
     <Box

@@ -6,7 +6,7 @@ export const ShoppingCart = () => {
 
   return (
     <>
-      <Badge sx={{ top: '10px' }} badgeContent={cantProdInCart} color="success">
+      <Badge badgeContent={cantProdInCart} color="success">
         <img
           src="/shopping-cart.svg"
           alt="logo"

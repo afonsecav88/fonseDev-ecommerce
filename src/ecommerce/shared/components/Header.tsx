@@ -1,11 +1,20 @@
-import { AppBar, Typography, Button, Container, Box } from '@mui/material';
+import {
+  AppBar,
+  Typography,
+  Button,
+  Container,
+  Box,
+  Stack,
+} from '@mui/material';
 import { Link, NavLink } from 'react-router-dom';
 import { Logo } from './Logo';
 import { ShoppingCart } from '../../components/ShoppingCart';
 import { Search } from './Search';
 import AppDrawer from '../../components/AppNavbarDrawer';
+import { ListItemRouter } from '../../routes/routerDrawer';
 
 export const Header = () => {
+  const listItemRouter = ListItemRouter;
   return (
     <>
       <AppBar
@@ -14,16 +23,16 @@ export const Header = () => {
         sx={{
           display: {
             xs: 'none',
-            md: 'block',
-            lg: 'block',
-            xl: 'block',
+            md: 'flex',
+            lg: 'flex',
+            xl: 'flex',
           },
-          padding: 1,
+          paddingX: 1,
           cursor: 'pointer',
           marginBottom: '20px',
           minWidth: '100%',
           alignItems: 'center',
-          height: '120px',
+          height: '75px',
         }}
       >
         <Container
@@ -31,80 +40,39 @@ export const Header = () => {
           sx={{
             display: 'flex',
             justifyContent: 'center',
-            gap: { xs: 0, md: 1, xl: 3 },
-            flexWrap: 'wrap',
-            marginRight: 10,
+            gap: { xs: 1, md: 2, lg: 3, xl: 4 },
+            marginTop: 2,
             height: '50px',
           }}
         >
-          <Typography variant="h1" sx={{ flexGrow: 1 }}>
+          <Typography variant="h2" sx={{ paddingLeft: 1, marginTop: '-18px' }}>
             <Link to={'/ecommerce'}>
               <Logo />
             </Link>
           </Typography>
-          <Button
-            color="inherit"
-            component={NavLink}
-            to="electronics"
-            sx={{
-              mt: 1,
-              color: '#fff',
-              '&:hover': {
-                color: 'rgb(226, 194, 145)',
-              },
-            }}
+          <Box
+            sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}
           >
-            electronics
-          </Button>
-          <Button
-            color="inherit"
-            component={NavLink}
-            to="jewelry"
-            sx={{
-              mt: 1,
-              color: '#fff',
-              '&:hover': {
-                color: 'rgb(226, 194, 145)',
-              },
-            }}
-          >
-            jewelry
-          </Button>
-          <Button
-            color="inherit"
-            component={NavLink}
-            to="men-clothing"
-            sx={{
-              mt: 1,
-              color: '#fff',
-              '&:hover': {
-                color: 'rgb(226, 194, 145)',
-              },
-            }}
-          >
-            men's clothing
-          </Button>
-          <Button
-            color="inherit"
-            component={NavLink}
-            to="women-clothing"
-            sx={{
-              mt: 1,
-              color: '#fff',
-              '&:hover': {
-                color: 'rgb(226, 194, 145)',
-              },
-            }}
-          >
-            women's clothing
-          </Button>
-          <ShoppingCart />
-        </Container>
-        <Container sx={{ display: 'flex', justifyContent: 'center', my: 1 }}>
-          <Search />
+            {listItemRouter.map(({ id, path, name }) => (
+              <NavLink
+                key={id}
+                to={path}
+                className={({ isActive }) =>
+                  isActive ? 'nav-active' : 'disable-visited-color'
+                }
+              >
+                <Button sx={{ color: 'white', padding: 1 }}>{name}</Button>
+              </NavLink>
+            ))}
+          </Box>
+          <Stack>
+            <Search />
+          </Stack>
+          <Stack sx={{ marginRight: 1 }}>
+            <ShoppingCart />
+          </Stack>
         </Container>
       </AppBar>
-
       <Box sx={{ display: { xs: 'block', sm: 'block', md: 'none' } }}>
         <AppDrawer />
       </Box>

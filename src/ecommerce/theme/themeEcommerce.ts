@@ -10,7 +10,7 @@ export const themeEcommerce = createTheme({
       main: '#9c27b0',
     },
     error: {
-      main: '#ef5350',
+      main: '#CC6E3B',
     },
     background: {
       default: '#fff',
@@ -19,6 +19,7 @@ export const themeEcommerce = createTheme({
   },
   typography: {
     fontFamily: 'Verdana, Roboto, Raleway',
+    fontSize: 12,
   },
 });
 

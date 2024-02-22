@@ -52,8 +52,6 @@ export const CartDrawer = ({ cartProducts }: ProductInCartProps) => {
         open={open}
         onClose={() => setOpen(false)}
       >
-        {/* <ProductInCartCard cartProducts={cartProducts} /> */}
-
         <Box
           sx={{ display: 'flex', flexDirection: 'column', auto: 250 }}
           role="presentation"

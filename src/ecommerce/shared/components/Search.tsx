@@ -4,19 +4,15 @@ import { useSearchContext } from '../../hooks/useSearchContext';
 export const Search = () => {
   const { searchTermValue, setSearchTermValue } = useSearchContext();
   return (
-    <>
-      <Input
-        id="search"
-        value={searchTermValue}
-        name="search"
-        onChange={(e) => setSearchTermValue(e.target.value)}
-        placeholder="Busque un producto"
-        autoComplete="off"
-        sx={{
-          background: '#CECECE',
-          paddingX: 1,
-        }}
-      />
-    </>
+    <Input
+      className="search-input"
+      id="search"
+      value={searchTermValue}
+      name="search"
+      onChange={(e) => setSearchTermValue(e.target.value)}
+      placeholder="      monitor, silver, casual ...    "
+      autoComplete="off"
+      disableUnderline
+    />
   );
 };
