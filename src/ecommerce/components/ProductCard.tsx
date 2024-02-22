@@ -61,7 +61,7 @@ export const ProductCard = ({ productItem }: CardProductProps) => {
         <Typography
           className="cart-description-truncate"
           variant="body1"
-          sx={{ marginY: 2, minHeight: '87px' }}
+          sx={{ marginY: 2, minHeight: '86px' }}
         >
           {description}
         </Typography>

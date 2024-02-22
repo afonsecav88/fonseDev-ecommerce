@@ -74,9 +74,13 @@ export default function ProductCartDetails({
       <Box sx={{ marginY: 2 }}>
         <Button
           variant="contained"
-          color="info"
+          color="success"
           size="small"
-          sx={{ width: '40px', height: '40px', marginLeft: '20px' }}
+          sx={{
+            width: '40px',
+            height: '40px',
+            marginLeft: '20px',
+          }}
           onClick={() => handleCLickAdd()}
         >
           +

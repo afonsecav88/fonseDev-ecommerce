@@ -14,7 +14,7 @@ export const ListItemRouter = [
     id: 2,
     path: 'JEWELRY',
     icon: <DiamondIcon />,
-    name: 'Lewelry',
+    name: 'Jewelry',
   },
   {
     id: 3,

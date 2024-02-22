@@ -38,9 +38,9 @@ export const CartDrawer = ({ cartProducts }: ProductInCartProps) => {
           right: '10px',
           position: 'fixed',
           marginBottom: 10,
+          backgroundColor: 'info.main',
         }}
         icon={<ShoppingCartCheckoutIcon />}
-        color="primary"
         label="Ver carrito"
         variant="outlined"
         onClick={() => setOpen(true)}
