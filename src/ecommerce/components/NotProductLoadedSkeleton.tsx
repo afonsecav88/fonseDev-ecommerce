@@ -16,34 +16,66 @@ export const NotProductLoadedSkeleton = () => {
             style={{ marginBottom: 6 }}
           />
         }
-        subheader={<Skeleton animation="wave" height={10} width="40%" />}
+        subheader={
+          <Skeleton
+            animation="wave"
+            height={10}
+            width="40%"
+            style={{ marginBottom: '60px' }}
+          />
+        }
       />
       <Skeleton
-        sx={{ height: 150 }}
-        width="100%"
+        sx={{ height: 150, marginLeft: '20%', marginBottom: 2 }}
+        width="60%"
         animation="wave"
         variant="rectangular"
       />
       <CardContent>
         <>
-          <Skeleton animation="wave" height={15} style={{ marginBottom: 6 }} />
-          <Skeleton animation="wave" height={150} width="100%" />
-          <Skeleton animation="wave" height={15} style={{ marginBottom: 6 }} />
-          <Skeleton animation="wave" height={15} style={{ marginBottom: 6 }} />
+          <Skeleton
+            animation="wave"
+            height={15}
+            width="80%"
+            style={{ marginBottom: 5, marginLeft: 8 }}
+          />
+          <Skeleton
+            animation="wave"
+            height={120}
+            width="100%"
+            style={{ marginBottom: 5 }}
+          />
+          <Skeleton
+            animation="wave"
+            height={15}
+            width="50%"
+            style={{ marginBottom: 8 }}
+          />
+          <Skeleton
+            animation="wave"
+            height={15}
+            width="70%"
+            style={{ marginBottom: 15 }}
+          />
         </>
       </CardContent>
-      <CardActions sx={{ display: 'flex', justifyContent: 'space-between' }}>
+      <CardActions
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+        }}
+      >
         <Skeleton
           animation="wave"
           width={100}
           height={50}
-          style={{ marginBottom: 6 }}
+          sx={{ marginBottom: 2, marginLeft: 3 }}
         />
         <Skeleton
           animation="wave"
           width={100}
           height={50}
-          style={{ marginBottom: 6 }}
+          sx={{ marginBottom: 2, marginRight: 3 }}
         />
       </CardActions>
     </Card>

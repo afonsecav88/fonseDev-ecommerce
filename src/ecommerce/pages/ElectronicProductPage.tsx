@@ -1,8 +1,8 @@
 import { useFilterProductByCategory } from '../hooks/useFilterProductByCategory';
 import { ProductCard } from '../components/ProductCard';
-import { NotProductsLoaded } from '../components/NotProductsLoaded';
 import { useSearchProductByTitle } from '../hooks/useSearchProductByTitle';
 import { ProductEntity } from '../store/models/ProductEntity';
+import { LoaderSkeleton } from '../components/NotProductLoadedSkeleton';
 
 export const ElectronicProductPage = () => {
   const { filteredProduct } = useFilterProductByCategory('electronics');
@@ -19,7 +19,7 @@ export const ElectronicProductPage = () => {
           <ProductCard key={productItem.id} productItem={productItem} />
         ))
       ) : (
-        <NotProductsLoaded />
+        <LoaderSkeleton />
       )}
     </>
   );

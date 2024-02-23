@@ -1,7 +1,7 @@
 import { useFilterProductByCategory } from '../hooks/useFilterProductByCategory';
 import { ProductCard } from '../components/ProductCard';
-import { NotProductsLoaded } from '../components/NotProductsLoaded';
 import { useSearchProductByTitle } from '../hooks/useSearchProductByTitle';
+import { LoaderSkeleton } from '../components/NotProductLoadedSkeleton';
 
 export const MenClothesProductPage = () => {
   const { filteredProduct } = useFilterProductByCategory("men's clothing");
@@ -19,7 +19,7 @@ export const MenClothesProductPage = () => {
           <ProductCard key={productItem.id} productItem={productItem} />
         ))
       ) : (
-        <NotProductsLoaded />
+        <LoaderSkeleton />
       )}
     </>
   );
