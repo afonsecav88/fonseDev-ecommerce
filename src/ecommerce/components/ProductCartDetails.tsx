@@ -1,11 +1,11 @@
-import { Typography, CardContent, Avatar, Button, Box } from '@mui/material';
-
 import { CartProduct } from '../store/models/CartProducts';
 import { useGetProductById } from '../hooks/useGetProductById';
 import { useAddToCart } from '../hooks/useAddToCart';
 import { useDeleteProductById } from '../hooks/useDeleteProductById';
+import { Typography, CardContent, Avatar, Button, Box } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+
 interface ProductCartMoreDetailsProp {
   product: CartProduct;
 }
@@ -71,7 +71,7 @@ export default function ProductCartDetails({
         variant="body1"
         color="text.secondary"
       >
-        <strong>Cantidad:</strong> {product.count}
+        <strong> Cantidad: </strong> {product.count}
       </Typography>
       <Box sx={{ marginY: 2 }}>
         <Button

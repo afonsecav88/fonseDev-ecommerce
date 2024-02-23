@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material';
+import { createTheme } from '@mui/material/styles';
 
 export const themeEcommerce = createTheme({
   palette: {
@@ -25,20 +25,20 @@ export const themeEcommerce = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Aptos,Verdana, Roboto, Raleway',
+    fontFamily: 'Aptos,Proxima Nova,Verdana, Roboto, Raleway',
     fontSize: 13,
   },
 });
 
 themeEcommerce.typography.h6 = {
   [themeEcommerce.breakpoints.up('md')]: {
-    fontFamily: 'Aptos,Verdana, Roboto, Raleway',
+    fontFamily: 'Aptos,Proxima Nova,Verdana, Roboto, Raleway',
     fontSize: '17px',
     letterSpacing: 1,
   },
 
   [themeEcommerce.breakpoints.between('sm', 'md')]: {
-    fontFamily: 'Aptos,Verdana, Roboto, Raleway',
+    fontFamily: 'Aptos,Proxima Nova,Verdana, Roboto, Raleway',
     fontSize: '15px',
     letterSpacing: 1,
   },
@@ -51,18 +51,18 @@ themeEcommerce.typography.h6 = {
 
 themeEcommerce.typography.body1 = {
   [themeEcommerce.breakpoints.up('md')]: {
-    fontFamily: 'Aptos,roxima Nova,Verdana, Roboto, Raleway',
+    fontFamily: 'Aptos,Proxima Nova,Verdana, Roboto, Raleway',
     fontSize: '14px',
     letterSpacing: 1,
   },
 
   [themeEcommerce.breakpoints.between('sm', 'md')]: {
-    fontFamily: 'Aptos,roxima Nova,Verdana, Roboto, Raleway',
+    fontFamily: 'Aptos,Proxima Nova,Verdana, Roboto, Raleway',
     fontSize: '15px',
     letterSpacing: 1,
   },
   [themeEcommerce.breakpoints.down('sm')]: {
-    fontFamily: 'Aptos,roxima Nova,Verdana, Roboto, Raleway',
+    fontFamily: 'Aptos,Proxima Nova,Verdana, Roboto, Raleway',
     fontSize: '15px',
     letterSpacing: 2,
   },
