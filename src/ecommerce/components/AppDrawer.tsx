@@ -60,7 +60,7 @@ export const AppDrawer = () => {
         {listItemRouter.map(({ id, path, name, icon }) => (
           <NavLink
             key={id}
-            to={path}
+            to={path.toLocaleLowerCase()}
             className={({ isActive }) =>
               isActive ? 'nav-active' : 'disable-visited-color'
             }

@@ -36,7 +36,7 @@ export const cartSlice = createSlice({
         state.cartProducts = state.cartProducts.filter(
           (prod) => prod.id !== product!.id,
         );
-        // another way to implement  this method
+        // another way to implement this method
         // const indexProduct = state.cartProducts.indexOf(product!);
         // state.cartProducts.splice(indexProduct, 1);
       }

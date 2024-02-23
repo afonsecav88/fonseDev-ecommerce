@@ -20,10 +20,12 @@ export const NotProductInCart = () => {
         }}
       >
         <Alert
-          severity="info"
+          severity="success"
           sx={{
             display: 'flex',
+            alignContent: 'center',
             justifyContent: { xs: 'start', md: 'center' },
+            alignItems: 'center',
             flexWrap: 'wrap',
           }}
         >
@@ -47,11 +49,15 @@ export const NotProductInCart = () => {
           </svg>
 
           <Button
+            sx={{
+              display: 'flex',
+              marginY: 2,
+              minWidth: '205px',
+            }}
             onClick={() => navigate('/')}
             variant="contained"
             color="success"
             size="small"
-            sx={{ display: 'flex', marginTop: '10px' }}
           >
             Descubre productos
           </Button>
