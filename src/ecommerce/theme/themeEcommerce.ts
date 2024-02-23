@@ -43,7 +43,7 @@ themeEcommerce.typography.h6 = {
     letterSpacing: 1,
   },
   [themeEcommerce.breakpoints.down('sm')]: {
-    fontFamily: 'Aptos,Verdana, Roboto, Raleway',
+    fontFamily: 'Aptos,Proxima Nova ,Verdana, Roboto, Raleway',
     fontSize: '14px',
     letterSpacing: 2,
   },
@@ -51,18 +51,18 @@ themeEcommerce.typography.h6 = {
 
 themeEcommerce.typography.body1 = {
   [themeEcommerce.breakpoints.up('md')]: {
-    fontFamily: 'Verdana, Roboto, Raleway',
+    fontFamily: 'Aptos,roxima Nova,Verdana, Roboto, Raleway',
     fontSize: '14px',
     letterSpacing: 1,
   },
 
   [themeEcommerce.breakpoints.between('sm', 'md')]: {
-    fontFamily: 'Verdana, Roboto, Raleway',
+    fontFamily: 'Aptos,roxima Nova,Verdana, Roboto, Raleway',
     fontSize: '15px',
     letterSpacing: 1,
   },
   [themeEcommerce.breakpoints.down('sm')]: {
-    fontFamily: 'Verdana, Roboto, Raleway',
+    fontFamily: 'Aptos,roxima Nova,Verdana, Roboto, Raleway',
     fontSize: '15px',
     letterSpacing: 2,
   },
