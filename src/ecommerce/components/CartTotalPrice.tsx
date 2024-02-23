@@ -4,9 +4,9 @@ import { useCalcTotalPrice } from '../hooks/useCalcTotalPrice';
 export const CartTotalPrice = () => {
   const { calcTotalPrice } = useCalcTotalPrice();
   return (
-    <Stack sx={{ width: '220px', margin: 2 }}>
+    <Stack sx={{ width: '420px', margin: 2 }}>
       <Typography variant="body2" color="text.secondary">
-        <strong>Precio total 💲:</strong> {calcTotalPrice()}
+        <strong>Precio total 💲:</strong> {calcTotalPrice().toFixed(2)}
       </Typography>
     </Stack>
   );

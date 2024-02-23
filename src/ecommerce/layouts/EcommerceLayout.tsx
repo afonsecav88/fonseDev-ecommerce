@@ -3,22 +3,24 @@ import { Outlet } from 'react-router-dom';
 import { Header } from '../shared/components/Header';
 import { ListProductsInCart } from '../components/ListProductsInCart';
 import { useNotifications } from '../hooks/useNotifications';
+import { Zoom } from 'react-toastify';
 
 export const EcommerceLayout = () => {
   const { ToastContainer } = useNotifications();
   return (
     <>
       <ToastContainer
-        position="top-left"
-        autoClose={1800}
-        hideProgressBar={false}
+        position="bottom-center"
+        autoClose={2000}
+        hideProgressBar={true}
         newestOnTop={false}
         closeOnClick
         rtl={false}
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="light"
+        theme="dark"
+        transition={Zoom}
       />
       <Header />
       <ListProductsInCart />
