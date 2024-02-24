@@ -10,6 +10,8 @@ import { EcommerceLayout } from '../layouts/EcommerceLayout';
 import { ListCardProductPage } from '../pages/ListCardProductPage';
 import { NoFoundPage } from '../pages/NoFoundPage';
 import { ProductCartDetailsPage } from '../pages/ProductCartDetailsPage';
+import { LoginLayout } from '../layouts/LoginLayout';
+import { LoginPage } from '../pages/LoginPage';
 
 export const router = createBrowserRouter([
   {
@@ -49,6 +51,16 @@ export const router = createBrowserRouter([
             element: <ProductCartDetailsPage />,
           },
         ],
+      },
+    ],
+  },
+  {
+    path: 'login',
+    element: <LoginLayout />,
+    children: [
+      {
+        path: '',
+        element: <LoginPage />,
       },
     ],
   },

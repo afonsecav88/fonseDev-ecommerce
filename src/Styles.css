@@ -39,3 +39,11 @@ a.disable-visited-color:visited {
   color: grey;
   background: rgb(238, 236, 236); 
 }
+
+
+.form-login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  gap: 15px;
+}

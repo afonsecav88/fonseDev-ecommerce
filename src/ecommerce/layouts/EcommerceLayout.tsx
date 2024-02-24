@@ -4,7 +4,6 @@ import { Header } from '../shared/components/Header';
 import { ListProductsInCart } from '../components/ListProductsInCart';
 import { useNotifications } from '../hooks/useNotifications';
 import { Zoom } from 'react-toastify';
-
 export const EcommerceLayout = () => {
   const { ToastContainer } = useNotifications();
   return (
