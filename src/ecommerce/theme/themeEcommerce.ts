@@ -15,7 +15,10 @@ export const themeEcommerce = createTheme({
     },
     info: {
       main: '#caf0f8',
-      light: '#d8e2dc',
+      light: '#d7d9b1',
+    },
+    warning: {
+      main: '#cdedfd',
     },
     success: {
       main: '#81b29a',

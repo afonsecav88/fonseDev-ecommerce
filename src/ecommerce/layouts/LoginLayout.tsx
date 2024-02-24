@@ -9,7 +9,7 @@ export const LoginLayout = () => {
         maxWidth={false}
         sx={{
           display: 'flex',
-          backgroundColor: 'info.light',
+          backgroundColor: 'primary.main',
           minHeight: '100vh',
           minWidth: '120%wh',
           margin: 0,

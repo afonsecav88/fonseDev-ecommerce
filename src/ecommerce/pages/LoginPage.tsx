@@ -7,13 +7,20 @@ export const LoginPage = () => {
       sx={{
         display: 'flex',
         justifyContent: 'center',
-        minHeight: '60vh',
+        minHeight: '200px',
         width: '100%',
         marginTop: '200px',
         gap: 2,
       }}
     >
-      <Box>
+      <Box
+        sx={{
+          backgroundColor: 'warning.main',
+          maxHeight: '220px',
+          padding: 3,
+          borderRadius: 3,
+        }}
+      >
         <form className="form-login">
           <label htmlFor="user"> Login : </label>
           <TextField
