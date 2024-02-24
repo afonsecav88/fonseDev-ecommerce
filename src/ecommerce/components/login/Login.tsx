@@ -1,18 +1,9 @@
 import { Typography, TextField, Button } from '@mui/material';
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
-import { loginUserAgainBackend } from '../../store/thunks';
-import { FormEvent } from 'react';
-import { useSelectorAndDispatch } from '../../hooks/useSelectorAndDispatch';
+import { useLoginUser } from '../../hooks/login/useLoginUser';
 
 export const Login = () => {
-  const { dispatch, users } = useSelectorAndDispatch();
-  const { userLogin } = users;
-  const { username, password } = userLogin;
-  const handleOnSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    dispatch(loginUserAgainBackend(userLogin));
-  };
-
+  const { username, password, handleOnSubmit } = useLoginUser();
   return (
     <>
       <Typography
@@ -32,7 +23,6 @@ export const Login = () => {
           label="user"
           type="text"
           value={username}
-          onChange={() => {}}
         />
 
         <TextField
@@ -41,7 +31,6 @@ export const Login = () => {
           label="password"
           type="password"
           value={password}
-          onChange={() => {}}
         />
 
         <Button type="submit" variant="contained" color="primary">
