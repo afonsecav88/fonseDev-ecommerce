@@ -12,17 +12,22 @@ export const Login = () => {
       >
         <SentimentSatisfiedAltIcon />
       </Typography>
-      <form onSubmit={(e) => handleOnSubmit(e)} className="form-login">
-        <label htmlFor="user">
+      <form
+        autoComplete="false"
+        onSubmit={(e) => handleOnSubmit(e)}
+        className="form-login"
+      >
+        <label htmlFor="username">
           <Typography variant="h6">Login : </Typography>
         </label>
 
         <TextField
           sx={{ width: { xs: 150, sm: 200, md: 300 } }}
-          id="user"
-          label="user"
+          id="username"
+          label="username"
           type="text"
           value={username}
+          autoComplete="false"
         />
 
         <TextField
@@ -31,6 +36,7 @@ export const Login = () => {
           label="password"
           type="password"
           value={password}
+          autoComplete="false"
         />
 
         <Button type="submit" variant="contained" color="primary">

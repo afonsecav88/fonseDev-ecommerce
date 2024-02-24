@@ -11,8 +11,9 @@ export const useLoginUser = () => {
   const { token } = autenticationToken;
 
   const handleOnSubmit = (e: FormEvent<HTMLFormElement>) => {
-    dispatch(loginUserAgainBackend(userLogin));
     e.preventDefault();
+    dispatch(loginUserAgainBackend(userLogin));
+    console.log('guarde el token');
   };
 
   useEffect(() => {
@@ -20,7 +21,7 @@ export const useLoginUser = () => {
       localStorage.setItem('userToken', token);
       return navigate('/ecommerce');
     }
-  }, [token]);
+  }, [navigate, token]);
 
   return {
     username,

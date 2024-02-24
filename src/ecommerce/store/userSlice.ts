@@ -4,7 +4,7 @@ import { AutenticationToken } from './models/AutenticationToken';
 
 const initialState: UserLoginInitialState = {
   isLogin: false,
-  autenticationToken: { token: '' },
+  autenticationToken: { token: localStorage.getItem('userToken') || '' },
   userLogin: {
     username: 'johnd',
     password: 'm38rmF$',
