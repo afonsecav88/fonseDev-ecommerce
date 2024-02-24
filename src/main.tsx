@@ -5,11 +5,14 @@ import './Styles.css';
 import { store } from './ecommerce/shared/store/store.ts';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './ecommerce/routes/router.tsx';
+import { EcommerceTheme } from './ecommerce/theme';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
+    <EcommerceTheme>
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
+    </EcommerceTheme>
   </React.StrictMode>,
 );
