@@ -6,11 +6,13 @@ export const useSelectorAndDispatch = () => {
   const cartsProducts = useAppSelector(
     (state: RootState) => state.cartProducts,
   );
+  const users = useAppSelector((state) => state.users);
   const dispatch = useAppDispatch();
 
   return {
     products,
     cartsProducts,
+    users,
     dispatch,
   };
 };
