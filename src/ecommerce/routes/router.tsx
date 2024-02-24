@@ -55,7 +55,7 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: 'home/login',
+    path: 'home',
     element: <LoginLayout />,
     children: [
       {

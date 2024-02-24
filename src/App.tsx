@@ -5,7 +5,7 @@ export const App = () => {
   const { pathname } = useLocation();
 
   if (pathname === '/') {
-    return <Navigate to="/ecommerce" />;
+    return <Navigate to="/home" />;
   }
 
   return (
