@@ -1,12 +1,19 @@
-import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { SearchProvider } from './ecommerce/context/SearchProvider';
+import { useSelectorAndDispatch } from './ecommerce/hooks/useSelectorAndDispatch';
+import { useEffect } from 'react';
 
 export const App = () => {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const { users } = useSelectorAndDispatch();
+  const { isLogged } = users;
 
-  if (pathname === '/') {
-    return <Navigate to="/home" />;
-  }
+  useEffect(() => {
+    if (pathname === '/') {
+      return navigate('/home');
+    }
+  }, [isLogged, navigate, pathname]);
 
   return (
     <main>

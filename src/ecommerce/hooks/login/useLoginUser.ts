@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 export const useLoginUser = () => {
   const navigate = useNavigate();
   const { dispatch, users } = useSelectorAndDispatch();
-  const { userLogin, autenticationToken } = users;
+  const { userLogin, isLogged, autenticationToken } = users;
   const { username, password } = userLogin;
   const { token } = autenticationToken;
 
@@ -17,11 +17,11 @@ export const useLoginUser = () => {
   };
 
   useEffect(() => {
+    localStorage.setItem('userToken', token);
     if (token.length > 0) {
-      localStorage.setItem('userToken', token);
-      return navigate('/ecommerce');
+      return navigate('/ecommerce', { replace: true });
     }
-  }, [navigate, token]);
+  }, [isLogged, navigate, token]);
 
   return {
     username,

@@ -3,7 +3,7 @@ import { UserLoginInitialState } from './models/UserLoginInitialState';
 import { AutenticationToken } from './models/AutenticationToken';
 
 const initialState: UserLoginInitialState = {
-  isLogin: false,
+  isLogged: false,
   autenticationToken: { token: localStorage.getItem('userToken') || '' },
   userLogin: {
     username: 'johnd',
@@ -16,10 +16,9 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     setLoginState: (state) => {
-      state.isLogin = true;
+      state.isLogged = true;
     },
     loginUser: (state, action: PayloadAction<AutenticationToken>) => {
-      setLoginState();
       state.autenticationToken = action.payload;
     },
   },

@@ -3,6 +3,6 @@ import { UserLogin } from './UserLogin';
 
 export interface UserLoginInitialState {
   autenticationToken: AutenticationToken;
-  isLogin: boolean;
+  isLogged: boolean;
   userLogin: UserLogin;
 }
