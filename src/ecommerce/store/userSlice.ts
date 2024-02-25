@@ -18,10 +18,15 @@ export const userSlice = createSlice({
     setLoginState: (state) => {
       state.isLogged = true;
     },
+    setTokenLocalStorage: (state) => {
+      state.autenticationToken.token = '';
+      localStorage.removeItem('userToken');
+    },
     loginUser: (state, action: PayloadAction<AutenticationToken>) => {
       state.autenticationToken = action.payload;
     },
   },
 });
 
-export const { setLoginState, loginUser } = userSlice.actions;
+export const { setLoginState, loginUser, setTokenLocalStorage } =
+  userSlice.actions;

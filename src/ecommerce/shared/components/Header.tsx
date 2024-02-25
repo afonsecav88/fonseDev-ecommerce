@@ -12,6 +12,7 @@ import { ShoppingCart } from '../../components/ShoppingCart';
 import { Search } from './Search';
 import AppDrawer from '../../components/AppNavbarDrawer';
 import { ListItemRouter } from '../../routes/routerDrawer';
+import { UserSesion } from '../../components/login/UserSesion';
 
 export const Header = () => {
   const listItemRouter = ListItemRouter;
@@ -70,6 +71,11 @@ export const Header = () => {
           </Stack>
           <Stack sx={{ marginRight: 1 }}>
             <ShoppingCart />
+          </Stack>
+          <Stack
+            sx={{ display: 'flex', gap: 1, marginRight: 1, marginTop: -1 }}
+          >
+            <UserSesion />
           </Stack>
         </Container>
       </AppBar>

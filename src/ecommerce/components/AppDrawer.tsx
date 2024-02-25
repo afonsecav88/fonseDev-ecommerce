@@ -13,7 +13,8 @@ import { ShoppingCart } from './ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 import { useUpdateProductInCart } from '../hooks/useUpdateProductInCart';
-import { Button } from '@mui/material';
+import { Button, Stack } from '@mui/material';
+import { UserSesion } from './login/UserSesion';
 
 type Anchor = 'left';
 
@@ -88,6 +89,17 @@ export const AppDrawer = () => {
           </ListItem>
         </ListItemButton>
       </List>
+      <Stack
+        sx={{
+          display: 'flex',
+          gap: 2,
+          marginTop: 2,
+          marginLeft: 5,
+          width: 50,
+        }}
+      >
+        <UserSesion />
+      </Stack>
     </Box>
   );
 
