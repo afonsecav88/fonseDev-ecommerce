@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useSelectorAndDispatch } from '../useSelectorAndDispatch';
-import { setTokenLocalStorage } from '../../store/userSlice';
+import { removeTokenInLocalStorage } from '../../store/userSlice';
 
 export const useHandleSesion = () => {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ export const useHandleSesion = () => {
   const { username } = userLogin;
 
   const handleOnClick = () => {
-    dispatch(setTokenLocalStorage());
+    dispatch(removeTokenInLocalStorage());
     navigate('/home');
   };
 
