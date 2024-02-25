@@ -4,7 +4,7 @@ import { setAllProducts, setLoadingProducts } from './productSlice';
 import { ProductEntity } from './models/ProductEntity';
 import { productsApi } from '../shared/api/productsApi';
 import { UserLogin } from './models/UserLogin';
-import { loginUser, setLoginState } from './userSlice';
+import { loginUser, setLoggedState } from './userSlice';
 import { AutenticationToken } from './models/AutenticationToken';
 
 export const getAllProducts = () => {
@@ -25,10 +25,12 @@ export const loginUserAgainBackend = (userCredentials: UserLogin) => {
   return async (dispatch: Dispatch<UnknownAction>) => {
     await productsApi
       .post<AutenticationToken>(`/auth/login`, userCredentials)
-      .then(({ data }) => dispatch(loginUser(data)))
+      .then(({ data }) => {
+        dispatch(loginUser(data));
+        dispatch(setLoggedState(true));
+      })
       .catch((error: Error) => {
         throw new Error(`Ha ocurrido un error  ${error} `);
       });
-    dispatch(setLoginState());
   };
 };

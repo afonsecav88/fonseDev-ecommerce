@@ -3,8 +3,8 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { useHandleSesion } from '../../hooks/login/useHandleSesion';
 
 export const UserSesion = () => {
-  const { handleOnClick, isLogged, username } = useHandleSesion();
-  if (!isLogged) return;
+  const { handleOnClick, username } = useHandleSesion();
+
   return (
     <>
       <Typography color="info.light" variant="h6">
