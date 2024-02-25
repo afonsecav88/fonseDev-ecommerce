@@ -15,7 +15,7 @@ export const Login = () => {
       </Typography>
       <form
         autoComplete="false"
-        onSubmit={(e) => handleOnSubmit(e)}
+        onSubmit={handleOnSubmit}
         className="form-login"
       >
         <label htmlFor="username">

@@ -5,9 +5,11 @@ import { Header } from '../shared/components/Header';
 import { useNotifications } from '../hooks/useNotifications';
 import { Zoom } from 'react-toastify';
 import { ListProductsInCart } from '../components/ListProductsInCart';
+import { usePrivateRoutes } from '../hooks/login/usePrivateRoutes';
 
 export const EcommerceLayout = () => {
   const { ToastContainer } = useNotifications();
+  usePrivateRoutes();
 
   return (
     <>

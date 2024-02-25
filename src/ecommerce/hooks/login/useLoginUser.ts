@@ -6,9 +6,16 @@ import { useNavigate } from 'react-router-dom';
 export const useLoginUser = () => {
   const navigate = useNavigate();
   const { dispatch, users } = useSelectorAndDispatch();
-  const { userLogin, isLogged, autenticationToken } = users;
+  const { userLogin, autenticationToken, isLogged } = users;
   const { username, password } = userLogin;
   const { token } = autenticationToken;
+
+  useEffect(() => {
+    if (token.length > 0) {
+      navigate('/ecommerce', { replace: true });
+    }
+    localStorage.setItem('userToken', token);
+  }, [isLogged, token, navigate]);
 
   const handleOnSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -16,14 +23,8 @@ export const useLoginUser = () => {
     console.log('guarde el token');
   };
 
-  useEffect(() => {
-    localStorage.setItem('userToken', token);
-    if (token.length > 0) {
-      return navigate('/ecommerce', { replace: true });
-    }
-  }, [isLogged, navigate, token]);
-
   return {
+    isLogged,
     username,
     password,
     handleOnSubmit,
