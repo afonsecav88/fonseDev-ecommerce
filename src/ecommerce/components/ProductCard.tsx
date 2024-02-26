@@ -29,6 +29,7 @@ export const ProductCard = ({ productItem }: CardProductProps) => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        minWidth: { xs: '70%', sm: '50%', md: '40%', lg: '30%' },
         maxWidth: 345,
         maxHeight: 660,
         padding: 4,

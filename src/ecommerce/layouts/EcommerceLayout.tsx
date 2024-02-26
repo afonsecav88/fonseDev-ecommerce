@@ -14,7 +14,6 @@ export const EcommerceLayout = () => {
   if (token.length == 0) {
     return <p>Loading....</p>;
   }
-  console.log('pase por aqui');
   return (
     <>
       <ToastContainer
@@ -37,6 +36,12 @@ export const EcommerceLayout = () => {
           display: 'flex',
           gap: 5,
           flexWrap: 'wrap',
+          justifyContent: {
+            xs: 'center',
+            sm: 'center',
+            md: 'center',
+            lg: 'center',
+          },
         }}
       >
         <Outlet />
