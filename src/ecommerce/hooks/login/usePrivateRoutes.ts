@@ -12,5 +12,9 @@ export const usePrivateRoutes = () => {
     if (token.length == 0) {
       navigate('/home', { replace: true });
     }
-  }, [isLogged, token, navigate]);
+  }, [isLogged, navigate, token]);
+
+  return {
+    token,
+  };
 };

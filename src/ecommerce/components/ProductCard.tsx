@@ -88,7 +88,7 @@ export const ProductCard = ({ productItem }: CardProductProps) => {
           color="success"
           size="small"
           sx={{ float: 'right' }}
-          onClick={() => navigate(`details/${id}`)}
+          onClick={() => navigate(`/ecommerce/details/${id}`)}
           startIcon={<ArrowForwardIcon />}
         >
           Details

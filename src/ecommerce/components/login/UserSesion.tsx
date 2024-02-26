@@ -11,7 +11,7 @@ export const UserSesion = () => {
         {username.toUpperCase()}
       </Typography>
       <Button
-        onClick={handleOnClick}
+        onClick={() => handleOnClick()}
         variant="contained"
         color="secondary"
         title="cerrar sesion"

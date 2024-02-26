@@ -27,10 +27,13 @@ export const loginUserAgainBackend = (userCredentials: UserLogin) => {
       .post<AutenticationToken>(`/auth/login`, userCredentials)
       .then(({ data }) => {
         dispatch(loginUser(data));
-        dispatch(setLoggedState(true));
       })
       .catch((error: Error) => {
         throw new Error(`Ha ocurrido un error  ${error} `);
+      })
+      .finally(() => {
+        console.log('SETEE EL ESTADO A TRUE EN EL loginUserAgainBackend');
+        dispatch(setLoggedState(true));
       });
   };
 };

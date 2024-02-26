@@ -9,8 +9,12 @@ import { usePrivateRoutes } from '../hooks/login/usePrivateRoutes';
 
 export const EcommerceLayout = () => {
   const { ToastContainer } = useNotifications();
-  usePrivateRoutes();
+  const { token } = usePrivateRoutes();
 
+  if (token.length == 0) {
+    return <p>Loading....</p>;
+  }
+  console.log('pase por aqui');
   return (
     <>
       <ToastContainer
