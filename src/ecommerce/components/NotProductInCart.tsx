@@ -54,7 +54,7 @@ export const NotProductInCart = () => {
               marginY: 2,
               minWidth: '205px',
             }}
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/ecommerce')}
             variant="contained"
             color="success"
             size="small"
