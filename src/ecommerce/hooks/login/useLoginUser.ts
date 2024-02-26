@@ -14,19 +14,18 @@ export const useLoginUser = () => {
     if (token.length > 0) {
       navigate('/ecommerce', { replace: true });
     }
-    localStorage.setItem('userToken', token);
   }, [isLogged, token, navigate]);
 
   const handleOnSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(loginUserAgainBackend(userLogin));
-    console.log('guarde el token');
   };
 
   return {
     isLogged,
     username,
     password,
+    token,
     handleOnSubmit,
   };
 };

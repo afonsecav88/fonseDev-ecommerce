@@ -1,7 +1,15 @@
 import { Container, CssBaseline } from '@mui/material';
 import { Outlet } from 'react-router-dom';
+import { useLoginUser } from '../hooks/login/useLoginUser';
+import { LoggedSpiner } from '../shared/components/LoggedSpiner';
 
 export const LoginLayout = () => {
+  const { token } = useLoginUser();
+
+  if (token.length > 0) {
+    return <LoggedSpiner />;
+  }
+
   return (
     <>
       <CssBaseline />

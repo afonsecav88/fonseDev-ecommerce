@@ -13,7 +13,7 @@ export const UserSesion = () => {
       <Button
         onClick={() => handleOnClick()}
         variant="contained"
-        color="secondary"
+        color="info"
         title="cerrar sesion"
       >
         <LogoutIcon />

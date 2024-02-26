@@ -16,7 +16,6 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     setLoggedState: (state, action: PayloadAction<boolean>) => {
-      console.log('SETEEAMOS EL isLogged a ', action.payload);
       state.isLogged = action.payload;
     },
     removeTokenInLocalStorage: (state) => {

@@ -6,13 +6,14 @@ import { useNotifications } from '../hooks/useNotifications';
 import { Zoom } from 'react-toastify';
 import { ListProductsInCart } from '../components/ListProductsInCart';
 import { usePrivateRoutes } from '../hooks/login/usePrivateRoutes';
+import { LoggedSpiner } from '../shared/components/LoggedSpiner';
 
 export const EcommerceLayout = () => {
   const { ToastContainer } = useNotifications();
   const { token } = usePrivateRoutes();
 
   if (token.length == 0) {
-    return <p>Loading....</p>;
+    return <LoggedSpiner />;
   }
   return (
     <>
