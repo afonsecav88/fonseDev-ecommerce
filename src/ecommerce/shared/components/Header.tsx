@@ -41,7 +41,7 @@ export const Header = () => {
           sx={{
             display: 'flex',
             justifyContent: 'center',
-            gap: { xs: 1, md: 2, lg: 3, xl: 4 },
+            gap: { xs: 1, md: 1, lg: 3, xl: 4 },
             marginTop: 2,
             height: '50px',
           }}
@@ -73,7 +73,7 @@ export const Header = () => {
             <ShoppingCart />
           </Stack>
           <Stack
-            sx={{ display: 'flex', gap: 1, marginRight: 1, marginTop: -1 }}
+            sx={{ display: 'flex', gap: 1, marginRight: 4, marginTop: -1 }}
           >
             <UserSesion />
           </Stack>
