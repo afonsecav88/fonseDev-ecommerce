@@ -73,7 +73,12 @@ export const Header = () => {
             <ShoppingCart />
           </Stack>
           <Stack
-            sx={{ display: 'flex', gap: 1, marginRight: 4, marginTop: -1 }}
+            sx={{
+              display: 'flex',
+              gap: 0.5,
+              marginRight: 4,
+              marginTop: -1,
+            }}
           >
             <UserSesion />
           </Stack>

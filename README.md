@@ -1,4 +1,4 @@
-# Ecommerce creado con React, Redux Toolkit , Typescript y MUI
+# Ecommerce creado con React, Redux Toolkit , Typescript , MUI , Axios
 
 ## Aplicación que consume un API para traer data de artículos.
 - API usada: https://fakestoreapi.com
@@ -16,6 +16,7 @@
 
 ✅ Fetching de datos desde la API.
 
+✅ Login de usuario y autenticación por token.
 
 ### Levantar la aplicación en desarrollo
 
@@ -23,3 +24,4 @@
 2. Para levantar el server de desarrollo ```npm run dev```
 3. Para hacer el build de la app ```npm run build``` 
 
+> NOTA: La app esta desplegada en este URL
