@@ -32,7 +32,7 @@ export const ProductsDetails = () => {
           lg: 'center',
           xl: 'center',
         },
-        minWidth: '450px',
+        minWidth: { xs: '70%', sm: '50%', md: '40%', lg: '30%' },
         gap: 2,
       }}
     >
