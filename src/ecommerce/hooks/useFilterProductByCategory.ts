@@ -9,8 +9,10 @@ export const useFilterProductByCategory = (category: ProductCategory) => {
   const { product } = products;
 
   useEffect(() => {
-    dispatch(getAllProducts());
-  }, [dispatch]);
+    if (product.length === 0) {
+      dispatch(getAllProducts());
+    }
+  }, [dispatch, product.length]);
 
   const filteredProduct = (): ProductEntity[] => {
     return product.filter(

@@ -21,8 +21,6 @@ export const ProductCard = ({ productItem }: CardProductProps) => {
     productItem;
   const { rate, count } = rating;
 
-  if (!productItem) return;
-
   return (
     <Card
       sx={{

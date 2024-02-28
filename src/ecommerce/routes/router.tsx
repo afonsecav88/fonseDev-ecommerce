@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import { App } from '../../App';
 import { ElectronicProductPage } from '../pages/ElectronicProductPage';
-import { JeweleryProductPage } from '../pages/JeweleryProductPage';
+import { JewelryProductPage } from '../pages/JewelryProductPage';
 import { MenClothesProductPage } from '../pages/MenClothesProductPage';
 import { WomenClothesProductPage } from '../pages/WomenClothesProductPage';
 import { ProductsDetails } from '../components/ProductsDetails';
@@ -32,7 +32,7 @@ export const router = createBrowserRouter([
           },
           {
             path: 'jewelry',
-            element: <JeweleryProductPage />,
+            element: <JewelryProductPage />,
           },
           {
             path: 'men-clothing',

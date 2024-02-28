@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useSelectorAndDispatch } from './useSelectorAndDispatch';
 
 export const useCalcTotalPrice = () => {
@@ -15,9 +14,6 @@ export const useCalcTotalPrice = () => {
     return totalPrice;
   };
 
-  //   useEffect(() => {
-  //     calcTotalPrice();
-  //   }, []);
   return {
     calcTotalPrice,
   };

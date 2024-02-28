@@ -4,7 +4,7 @@ import { ProductCard } from '../components/ProductCard';
 import { useSearchProductByTitle } from '../hooks/useSearchProductByTitle';
 import { LoaderSkeleton } from '../components/NotProductLoadedSkeleton';
 
-export const JeweleryProductPage = () => {
+export const JewelryProductPage = () => {
   const { filteredProduct } = useFilterProductByCategory('jewelery');
   const { searchProducts } = useSearchProductByTitle();
 
