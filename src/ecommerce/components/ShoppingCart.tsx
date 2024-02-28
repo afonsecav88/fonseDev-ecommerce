@@ -8,7 +8,7 @@ export const ShoppingCart = () => {
     <>
       <Badge badgeContent={cantProdInCart} color="success" sx={{ paddingY: 1 }}>
         <img
-          src="/shopping-cart.svg"
+          src="/src/assets/shopping-cart.svg"
           alt="logo"
           className="shopping-cart-image"
           onClick={() => navigate(`cart/details`)}
