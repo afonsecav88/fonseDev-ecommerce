@@ -15,8 +15,9 @@ export const NotProductInCart = () => {
             lg: 'center',
             xl: 'center',
           },
-          minWidth: '450px',
+          minWidth: { xs: '80%', sm: '80%', md: '50%', lg: '50%' },
           gap: 2,
+          marginLeft: -3,
         }}
       >
         <Alert

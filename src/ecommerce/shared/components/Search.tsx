@@ -6,9 +6,9 @@ export const Search = () => {
   return (
     <Input
       className="search-input"
-      id="search"
+      id="search-input"
       value={searchTermValue}
-      name="search"
+      name="search-input"
       onChange={(e) => setSearchTermValue(e.target.value)}
       placeholder="  monitor, silver, casual ...    "
       autoComplete="off"
