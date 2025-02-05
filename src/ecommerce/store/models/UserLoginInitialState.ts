@@ -1,8 +1,8 @@
-import { AutenticationToken } from './AutenticationToken';
+import { AuthenticationToken } from './AuthenticationToken';
 import { UserLogin } from './UserLogin';
 
 export interface UserLoginInitialState {
-  autenticationToken: AutenticationToken;
+  authenticationToken: AuthenticationToken;
   isLogged: boolean;
   userLogin: UserLogin;
 }

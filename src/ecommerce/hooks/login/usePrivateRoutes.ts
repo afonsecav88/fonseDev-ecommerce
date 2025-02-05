@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 export const usePrivateRoutes = () => {
   const navigate = useNavigate();
   const { users } = useSelectorAndDispatch();
-  const { autenticationToken, isLogged } = users;
-  const { token } = autenticationToken;
+  const { authenticationToken, isLogged } = users;
+  const { token } = authenticationToken;
 
   useEffect(() => {
     if (token.length == 0) {

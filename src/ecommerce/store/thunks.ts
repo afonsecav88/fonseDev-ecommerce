@@ -5,7 +5,7 @@ import { ProductEntity } from './models/ProductEntity';
 import { productsApi } from '../shared/api/productsApi';
 import { UserLogin } from './models/UserLogin';
 import { loginUser, setLoggedState } from './userSlice';
-import { AutenticationToken } from './models/AutenticationToken';
+import { AuthenticationToken } from './models/AuthenticationToken';
 
 export const getAllProducts = () => {
   return async (dispatch: Dispatch<UnknownAction>) => {
@@ -25,7 +25,7 @@ export const getAllProducts = () => {
 export const loginUserAgainBackend = (userCredentials: UserLogin) => {
   return async (dispatch: Dispatch<UnknownAction>) => {
     await productsApi
-      .post<AutenticationToken>(`/auth/login`, userCredentials)
+      .post<AuthenticationToken>(`/auth/login`, userCredentials)
       .then(({ data }) => {
         dispatch(loginUser(data));
         const { token } = data;

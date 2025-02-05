@@ -6,9 +6,9 @@ import { useNavigate } from 'react-router-dom';
 export const useLoginUser = () => {
   const navigate = useNavigate();
   const { dispatch, users } = useSelectorAndDispatch();
-  const { userLogin, autenticationToken, isLogged } = users;
+  const { userLogin, authenticationToken, isLogged } = users;
   const { username, password } = userLogin;
-  const { token } = autenticationToken;
+  const { token } = authenticationToken;
 
   useEffect(() => {
     if (token.length > 0) {

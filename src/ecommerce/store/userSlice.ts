@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { UserLoginInitialState } from './models/UserLoginInitialState';
-import { AutenticationToken } from './models/AutenticationToken';
+import { AuthenticationToken } from './models/AuthenticationToken';
 
 const initialState: UserLoginInitialState = {
   isLogged: false,
-  autenticationToken: { token: localStorage.getItem('userToken') || '' },
+  authenticationToken: { token: localStorage.getItem('userToken') || '' },
   userLogin: {
     username: 'johnd',
     password: 'm38rmF$',
@@ -19,11 +19,11 @@ export const userSlice = createSlice({
       state.isLogged = action.payload;
     },
     removeTokenInLocalStorage: (state) => {
-      state.autenticationToken.token = '';
+      state.authenticationToken.token = '';
       localStorage.removeItem('userToken');
     },
-    loginUser: (state, action: PayloadAction<AutenticationToken>) => {
-      state.autenticationToken = action.payload;
+    loginUser: (state, action: PayloadAction<AuthenticationToken>) => {
+      state.authenticationToken = action.payload;
     },
   },
 });

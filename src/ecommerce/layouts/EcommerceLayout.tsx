@@ -6,7 +6,7 @@ import { useNotifications } from '../hooks/useNotifications';
 import { Zoom } from 'react-toastify';
 import { ListProductsInCart } from '../components/ListProductsInCart';
 import { usePrivateRoutes } from '../hooks/login/usePrivateRoutes';
-import { LoggedSpiner } from '../shared/components/LoggedSpiner';
+import { LoggedSpinner } from '../shared/components/LoggedSpinner';
 import { useGetAllProducts } from '../hooks/useGetAllProducts';
 
 export const EcommerceLayout = () => {
@@ -15,7 +15,7 @@ export const EcommerceLayout = () => {
   useGetAllProducts();
 
   if (token.length == 0) {
-    return <LoggedSpiner />;
+    return <LoggedSpinner />;
   }
   return (
     <>
