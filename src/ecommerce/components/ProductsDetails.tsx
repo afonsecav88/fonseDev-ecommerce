@@ -30,11 +30,7 @@ export const ProductsDetails = () => {
     setProductFounded(foundProduct);
   }, [id, productGetById, isLoading]);
 
-  console.log('isLoading', isLoading);
-  console.log('productFounded', productFounded);
-
   if (isLoading) return <Loading />;
-
   if (productFounded === null) return <Loading />;
   if (!isLoading && productFounded === undefined) return <NoFoundPage />;
   return (
