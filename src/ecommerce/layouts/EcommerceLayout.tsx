@@ -7,10 +7,12 @@ import { Zoom } from 'react-toastify';
 import { ListProductsInCart } from '../components/ListProductsInCart';
 import { usePrivateRoutes } from '../hooks/login/usePrivateRoutes';
 import { LoggedSpiner } from '../shared/components/LoggedSpiner';
+import { useGetAllProducts } from '../hooks/useGetAllProducts';
 
 export const EcommerceLayout = () => {
   const { ToastContainer } = useNotifications();
   const { token } = usePrivateRoutes();
+  useGetAllProducts();
 
   if (token.length == 0) {
     return <LoggedSpiner />;
