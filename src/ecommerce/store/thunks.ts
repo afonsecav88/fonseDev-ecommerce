@@ -9,12 +9,13 @@ import { AutenticationToken } from './models/AutenticationToken';
 
 export const getAllProducts = () => {
   return async (dispatch: Dispatch<UnknownAction>) => {
-    dispatch(setLoadingProducts());
+    dispatch(setLoadingProducts(true));
     await productsApi
       .get<ProductEntity[]>(`/products`)
       .then(({ data }) => {
         dispatch(setAllProducts(data));
       })
+      .finally(() => dispatch(setLoadingProducts(false)))
       .catch((error: Error) => {
         throw new Error(`Ha ocurrido un error  ${error.message} `);
       });

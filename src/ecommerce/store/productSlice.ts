@@ -12,8 +12,8 @@ export const productSlice = createSlice({
   name: 'Product',
   initialState,
   reducers: {
-    setLoadingProducts: (state) => {
-      state.isLoading = true;
+    setLoadingProducts: (state, action: PayloadAction<boolean>) => {
+      state.isLoading = action.payload;
     },
     setAllProducts: (state, action: PayloadAction<ProductEntity[]>) => {
       state.isLoading = false;

@@ -12,14 +12,31 @@ import { useGetProductById } from '../hooks/useGetProductById';
 import { AddToCart } from './AddToCart';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Loading } from './Loading';
+import { useEffect, useState } from 'react';
+import { ProductEntity } from '../store/models/ProductEntity';
+import { NoFoundPage } from '../pages/NoFoundPage';
 
 export const ProductsDetails = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-  const { productFounded, loading } = useGetProductById(+id!);
+  const { productGetById, isLoading } = useGetProductById();
+  const [productFounded, setProductFounded] = useState<
+    ProductEntity | null | undefined
+  >(null);
 
-  if (loading || !productFounded) return <Loading />;
+  useEffect(() => {
+    if (!id) return;
+    const foundProduct = productGetById(+id);
+    setProductFounded(foundProduct);
+  }, [id, productGetById, isLoading]);
 
+  console.log('isLoading', isLoading);
+  console.log('productFounded', productFounded);
+
+  if (isLoading) return <Loading />;
+
+  if (productFounded === null) return <Loading />;
+  if (!isLoading && productFounded === undefined) return <NoFoundPage />;
   return (
     <Container
       sx={{
@@ -31,26 +48,26 @@ export const ProductsDetails = () => {
     >
       <Card sx={{ maxWidth: 345, padding: 3, marginBottom: 2 }}>
         <Typography variant="h6">
-          <strong> {productFounded.title}</strong>
+          <strong> {productFounded?.title}</strong>
         </Typography>
         <Typography sx={{ display: 'flex', justifyContent: 'flex-end', mt: 3 }}>
-          <AddToCart productItem={productFounded} />
+          <AddToCart productItem={productFounded!} />
         </Typography>
         <CardMedia
           sx={{ height: '100%vh', width: '100%', padding: 4 }}
-          image={productFounded.image}
-          title={productFounded.title}
+          image={productFounded?.image}
+          title={productFounded?.title}
           component="img"
         />
         <CardContent>
           <Typography variant="h6" component="div" sx={{ marginY: 2 }}>
-            <strong> Category: </strong> {productFounded.category}
+            <strong> Category: </strong> {productFounded?.category}
           </Typography>
           <Typography variant="body1" sx={{ marginY: 2 }}>
-            {productFounded.description}
+            {productFounded?.description}
           </Typography>
           <Typography variant="body2">
-            <strong> Price: </strong> {`$ ${productFounded.price}`}
+            <strong> Price: </strong> {`$ ${productFounded?.price}`}
           </Typography>
           <Typography
             variant="body2"
@@ -61,8 +78,8 @@ export const ProductsDetails = () => {
               marginY: 2,
             }}
           >
-            <strong>Rate:</strong> {productFounded.rating.rate}{' '}
-            <strong> Count: </strong> {productFounded.rating.count}
+            <strong>Rate:</strong> {productFounded?.rating.rate}{' '}
+            <strong> Count: </strong> {productFounded?.rating.count}
           </Typography>
         </CardContent>
         <Button

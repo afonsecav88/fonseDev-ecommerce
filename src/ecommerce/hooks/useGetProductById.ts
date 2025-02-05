@@ -1,22 +1,16 @@
-import { useState, useEffect } from 'react';
-import { ProductEntity } from '../store/models/ProductEntity';
 import { useSelectorAndDispatch } from './useSelectorAndDispatch';
+import { ProductEntity } from '../store/models/ProductEntity';
 
-export const useGetProductById = (id: number) => {
+export const useGetProductById = () => {
   const { products } = useSelectorAndDispatch();
+  const { isLoading } = products;
   const { product } = products;
 
-  const [productFounded, setProductFounded] = useState<ProductEntity | null>();
-  const [loading, setLoading] = useState(true);
+  const productGetById = (id: number) => {
+    if (!product) return null;
+    const foundProduct = product.find((p: ProductEntity) => p.id === id);
+    return foundProduct;
+  };
 
-  useEffect(() => {
-    if (id) {
-      setLoading(true);
-      const foundProduct = product.find((p: ProductEntity) => p.id === +id);
-      setProductFounded(foundProduct || null);
-      setLoading(false);
-    }
-  }, [id, product]);
-
-  return { productFounded, loading };
+  return { productGetById, isLoading };
 };
